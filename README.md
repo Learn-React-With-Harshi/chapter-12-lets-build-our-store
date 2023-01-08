@@ -2,7 +2,7 @@
    Documenting my learning journey of [Namaste React Live Course](https://learn.namastedev.com/) conducted by Akshay Saini
 
 ## Class Summary `Chapter - 05 Let's Get Hooked` (08/01/2023)
-  Chapter-05 was an interesting session where we started to develop a config-driven UI for food ordering platform. First, we created LLD of the web application, continued working on creating layouts, components and data manipulation from mock data. Concepts of props(properties), virtual DOM, importance of unique key were discussed. 
+  Chapter-05 was the continuation of previous chapter where we started to develop a food delivery app. In this chapter, we re-organised the repo structure, clean coding principles, exported and imported modules. Then, the hero of this chapter `Hook` got everyone hooked to their screen. It was indeed a 3 hours knowledge heavy session where basic of hooks were covered. We used hooks to filter the restaurants based on serach input. 
 
 
 One line about this chapter : Hook is just normal function which encapsulates the local variable(`state`), that state can only be modified using a it's member function `setState`. 
