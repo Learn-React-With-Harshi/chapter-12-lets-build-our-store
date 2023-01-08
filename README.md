@@ -5,7 +5,7 @@
   Chapter-05 was an interesting session where we started to develop a config-driven UI for food ordering platform. First, we created LLD of the web application, continued working on creating layouts, components and data manipulation from mock data. Concepts of props(properties), virtual DOM, importance of unique key were discussed. 
 
 
-One line about this chapter : 
+One line about this chapter : Hook is just normal function which encapsulates the local variable(`state`), that state can only be modified using a it's member function `setState`. 
 
 Check out [Chapter-05 Live](https://learn-react-with-harshi-chapter-05.netlify.app/) for the live demo of this chapter's coding assignment 
 
