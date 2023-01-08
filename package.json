@@ -2,7 +2,6 @@
   "name": "chapter-05-lets-get-hooked",
   "version": "1.0.0",
   "description": "Documenting my learning journey of [Namaste React Live Course](https://learn.namastedev.com/) conducted by Akshay Saini",
-  "main": "index.js",
   "scripts": {
     "test": "jest",
     "start": "parcel index.html",
