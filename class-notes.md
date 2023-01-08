@@ -52,6 +52,13 @@ Every componenet in react maintains a state
 
 Hook -> just like normal function -> called using useState() - to create state variable 
 
+HOOKS -> provides a direct API to teh React concepts 
+
+Why hooks ? 
+
+- Hooks allow you to `reuse stateful logic` without changing your component hierarchy.
+- Hooks let you split one component into smaller functions based on what pieces are related (such as setting up a subscription or fetching data)
+
 - returns as array and first element is a variable, which is local state variable and value is passed through useState(value)
 
 - second arg is function to modify the state variable 

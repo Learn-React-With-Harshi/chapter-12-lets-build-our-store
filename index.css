@@ -28,12 +28,20 @@
 .nav-items > ul > li {
   padding: 10px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  color : #000814;
 }
 
 .logo {
   width: 80px;
 }
 
+.search-container {
+  display: flex;
+}
+
+.search-input {
+  height: 30px;
+}
 .card{
   width: 250px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
