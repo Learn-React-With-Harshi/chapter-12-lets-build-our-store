@@ -4,6 +4,8 @@
 ## Class Summary `Chapter - 05 Let's Get Hooked` (08/01/2023)
   Chapter-05 was the continuation of previous chapter where we started to develop a food delivery app. In this chapter, we re-organised the repo structure, clean coding principles, exported and imported modules. Then, the hero of this chapter `Hook` got everyone hooked to their screen. It was indeed a 3 hours knowledge heavy session where basic of hooks were covered. We used hooks to filter the restaurants based on serach input. 
 
+After today's session, got a better understanding of [Thinking in React](https://beta.reactjs.org/learn/thinking-in-react) 
+
 
 One line about this chapter : Hook is just normal function which encapsulates the local variable(`state`), that state can only be modified using a it's member function `setState`. 
 
