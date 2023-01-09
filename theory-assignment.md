@@ -4,7 +4,7 @@
 
 ## Theory Assignment: `Chapter - 05 Let's Get Hooked` (08/01/2023)
 
-###  1. What is the difference between `named Export` and  `default export` and `* as` export ?
+###  1. What is the difference between `named export` and  `default export` and `* as` export ?
 
 Import & Export Modules are ES6 features that allows us to write reusable js code (modules), which when exported, allowing other modules to use it by importing. 
 
@@ -29,12 +29,14 @@ Import & Export Modules are ES6 features that allows us to write reusable js cod
    - Import Maps :
      While importing, the component can be given an alias name and then in that file, that component is referred only using that alias name.
       
-      Example : Check `Footer.js` file inside components in this chapter. Footer Component is exported using `export default Footer;`
+      Example : Check `Footer.js` file inside components in this chapter. Footer Component is exported as named export using `export const Footer = () => {}`
 
       In the `app.js` file, while importing use `import {Footer as MainFooter} from "./components/Footer";`. <MainFooter> </MainFooter> is the component name now, error is thrown if <Footer></Footer>
       .
       .
       <MainFooter> </MainFooter>
+
+      For using import map in default exported component, just use `import NewComponentName from './components/Header';`
       
    - import * as 
      It is useful when we import all the components/modules functions as namespace object which contains all exports as properties. Those exported components can be accessed by Module.component name 
@@ -75,7 +77,7 @@ React provides a bunch of standard in-built hooks like useState(), useEffect(), 
 
   If we want to use the prev state value instead of the first value , we can pass a function to setState, it receives previous state and returns updated state.
 
-  
+
   
 
 
