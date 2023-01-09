@@ -1,6 +1,6 @@
 import {IMG_CDN} from "../config";
 
-const RestaurantCard = ({name, cuisines, cloudinaryImageId, avgRating, lastMileTravelString}) => {
+export const RestaurantCard = ({name, cuisines, cloudinaryImageId, avgRating, lastMileTravelString}) => {
   return (
     <div className="card">
       <img className="card-img" src={ IMG_CDN +
@@ -15,5 +15,3 @@ const RestaurantCard = ({name, cuisines, cloudinaryImageId, avgRating, lastMileT
 
   );
 };
-
-export default RestaurantCard;

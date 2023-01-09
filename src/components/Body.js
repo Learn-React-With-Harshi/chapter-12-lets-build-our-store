@@ -1,29 +1,27 @@
-import RestaurantCard from './RestaurantCard';
-import { restaurantList } from '../config';
+import { RestaurantCard } from './RestaurantCard'; /* Import using Named Import */
+import { restaurantList } from '../config'; /* Named Import*/
 import { useState } from 'react';
 
 const filterData = (searchText, restaurants) => {
   console.log(searchText);
   const f = restaurants.filter(restaurant => restaurant.data.name.toLowerCase().includes(searchText));
-  return f; }
-
-
+  return f; 
+}
 
 const Body = () => {
   const [searchText, setSearchText] = useState();
   const [restaurants, setRestaurants] = useState(restaurantList);
-  const [errorMsg, setErrorMsg] = useState("false");
+  const [errorMsg, setErrorMsg] = useState('');
 
   const searchData = (searchText, restaurants ) => ()=> {  
     if(searchText !== '') {
     const data = filterData(searchText,restaurants);
     setRestaurants(data); 
     if (data.length === 0) {
-      document.getElementById("error").classList.remove("hide");
+      setErrorMsg('No matches found ');
     }
-  
-  }
-    else {
+  } else {
+      if(errorMsg) setErrorMsg('');
       setRestaurants(restaurantList);
     }
   }
@@ -36,9 +34,12 @@ const Body = () => {
       <button className="search-btn" 
       onClick={searchData(searchText, restaurants)}> Search </button>
     </div>
-    <div className="error-container hide" id="error">
-      <span className="error-msg" id="error-msg">No matches found </span>
-    </div>
+    { errorMsg && 
+      <div className="error-container" id="error">
+        <span className="error-msg" id="error-msg">{errorMsg}</span>
+      </div> 
+    }
+    
     <div className="restaurant-list">
       {restaurants.map((restaurant) => {
         return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;

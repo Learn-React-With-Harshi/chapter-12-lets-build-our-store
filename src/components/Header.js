@@ -1,12 +1,12 @@
 import logo from '../../assets/images/logo-main.png';
 
-const Title = () => {
+export const Title = () => {
   return(
   <a href="/"> <img className="logo" alt="logo" src= {logo} /> </a>
   )
 };
 
-const NavComponent = () => {
+export const NavComponent = () => {
   return (
     <div className="nav-items">
     <ul>
@@ -18,7 +18,7 @@ const NavComponent = () => {
   </div>
   );
 }
-const Header = () => {
+export const Header = () => {
   return (
     <div className="header">
       <Title />
