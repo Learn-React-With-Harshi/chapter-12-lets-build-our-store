@@ -2,16 +2,22 @@
   padding :0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+
 }
 #root {
   height: 100%;
   min-width: 1240px;
 }
 .header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between ;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  height: 80px;
+  height: 70px;
   background: #fff;
 }
 
@@ -22,57 +28,126 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly ;
-  font-size: 20px;
+  
 }
 
 .nav-items > ul > li {
   padding: 10px;
+  color : #001d3d;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-items > ul > li:hover {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  color : #000814;
+  border-radius: 7px;
+  background-color: #ffc300;
 }
 
 .logo {
-  width: 80px;
+  margin-left: 10px;
+  width: 70px;
 }
-
+.container {
+  margin-top: 90px;
+}
 .search-container {
   display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+  max-width : 500px;
+  align-items: center;
+  margin: auto;
 }
 
 .search-input {
   height: 30px;
+  width: 400px;
+  appearance: none;
+  background-color: #EEEEEE;
+  border: 0px inset rgba(0, 0, 0, 0.4);
+  border-radius: 7px;
+  outline: none;
+}
+
+.search-btn {
+  background-color: #ffc300;
+  height: 30px;
+  color : 001d3d;
+  width : 50px;
+  height: 30px;
+  border-radius: 7px;
+  border: #ffc300;
+  outline: none;
+}
+
+.error-container {
+  height: 50px;
+  margin: auto;
+  text-align: center;
+}
+.hide {
+  display: none;
+}
+.error-msg {
+  width : 50px;
+  height: 30px;
+  font-size: 14px;
+  color : #e12c2c;
+}
+
+.card-text {
+  color: gray; 
+  font-size: 12px;
+}
+
+.card-rating {
+  background-color: #ffc300; 
+  padding-left: 5px; 
+  padding-right: 5px;
+}
+
+.eta {
+  font-size: 14px; 
+  color: gray; 
+  padding-left:11px; 
+  padding-right: 11px;
 }
 .card{
   width: 250px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+ 
   padding: 10px;
-  margin: 10px;
+  margin-bottom: 30px;
+}
+.card:hover {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .card > img {
   width: 100%;
 }
 
+
 .card-title {
-  font-size: 17px;
-  font-weight: 500;
-  word-break: break-word;
-}
-
-.card-tags {
-  color: #686b78;
-    font-size: 13px;
-    margin-top: 4px;
-}
-
-.card-rating {
-  background-color: #db7c38;
-  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  word-spacing: 2px;
 }
 
 .restaurant-list {
   display: flex;
   flex-wrap: wrap;
   gap : 20px;
-  justify-content: space-start;
+  justify-content: space-evenly;
+  padding-top: 30px;
+  min-width: 1200;
+}
+
+.footer {
+  width: 100%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  height: 50px;
+  background: #ffc300;
+  color: #001d3d;
+  text-align: center;
 }

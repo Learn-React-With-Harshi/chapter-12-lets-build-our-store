@@ -99,3 +99,8 @@ funciton filterData(searchText, restaurants) {
     res.data.name 
   })
 }
+
+### In react we are using useState like this---> const [searchText, setSearchText] = useState("")  isn't is against javascript rule as we are able to change the value of searchText which is of type const
+
+- When we change this state variable using setSearchText it forces the component to re-render.
+Every time the component re-renders, the const is a new version of const with updated value. 
