@@ -42,14 +42,12 @@
 .nav-items > ul > li {
   padding: 10px;
   color : #001d3d;
-  font-size: 18px;
-  font-weight: 500;
+  /*font-size: 18px;*/
 }
 
 .nav-items > ul > li:hover {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 7px;
-  background-color: #ffc300;
 }
 
 .logo {
@@ -58,7 +56,7 @@
 }
 
 .cart, .profile, .home{
-  width: 60px;
+  width: 50px;
 }
 .search-icon {
   width : 20px;
