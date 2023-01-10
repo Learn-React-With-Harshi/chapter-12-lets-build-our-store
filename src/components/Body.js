@@ -13,6 +13,8 @@ const Body = () => {
   const [restaurants, setRestaurants] = useState(restaurantList);
   const [errorMsg, setErrorMsg] = useState('');
 
+
+
   const searchData = (searchText, restaurants ) => ()=> {  
     if(searchText !== '') {
     const data = filterData(searchText,restaurants);
