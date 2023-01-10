@@ -5,6 +5,17 @@
   font-family: "PT Sans", Calibri, Tahoma, sans-serif;
 
 }
+.bg-success {
+  background-color: #6dad1f;
+}
+.bg-danger {
+  background-color: #e07000;
+}
+.bg-primary {
+  background-color: #ffc300;
+}
+
+
 #root {
   height: 100%;
   min-width: 1240px;
@@ -20,15 +31,12 @@
   height: 70px;
   background: #fff;
 }
-
-.nav-items > ul{
-  padding-top : 20px;
-  min-width : 400px;
+.nav-items > ul{ 
+  max-width : 400px;
   list-style-type: none;
   display: flex;
   align-items: center;
   justify-content: space-evenly ;
-  
 }
 
 .nav-items > ul > li {
@@ -48,6 +56,11 @@
   margin-left: 10px;
   width: 70px;
 }
+
+.cart, .profile, .home{
+  width: 60px;
+}
+
 .container {
   margin-top: 90px;
 }
@@ -68,17 +81,22 @@
   border: 0px inset rgba(0, 0, 0, 0.4);
   border-radius: 7px;
   outline: none;
+  font-size: 16px;
+  padding : 5px;
 }
 
 .search-btn {
   background-color: #ffc300;
   height: 30px;
-  color : 001d3d;
-  width : 50px;
-  height: 30px;
+  color : #001d3d;
+  width : 60px;
   border-radius: 7px;
   border: #ffc300;
   outline: none;
+  font-size: 16px;
+}
+.search-btn:hover {
+  cursor: pointer;
 }
 
 .error-container {
@@ -93,29 +111,10 @@
   width : 50px;
   height: 30px;
   font-size: 14px;
-  color : #e12c2c;
-}
-
-.card-text {
-  color: gray; 
-  font-size: 12px;
-}
-
-.card-rating {
-  background-color: #ffc300; 
-  padding-left: 5px; 
-  padding-right: 5px;
-}
-
-.eta {
-  font-size: 14px; 
-  color: gray; 
-  padding-left:11px; 
-  padding-right: 11px;
+  color : #c70039;
 }
 .card{
   width: 250px;
- 
   padding: 10px;
   margin-bottom: 30px;
 }
@@ -127,12 +126,38 @@
   width: 100%;
 }
 
-
 .card-title {
   font-size: 16px;
   font-weight: bold;
   word-spacing: 2px;
 }
+
+.card-text {
+  color: gray; 
+  font-size: 12px;
+}
+.card-params {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-rating {
+  width: 22px;
+  padding-left: 3px;
+  border-radius: 5px;
+  font-size: 11px;
+  color:#EEEEEE;
+}
+
+.eta {
+  font-size: 14px; 
+  color: gray; 
+  padding-left:11px; 
+  padding-right: 11px;
+
+}
+
 
 .restaurant-list {
   display: flex;
@@ -143,11 +168,20 @@
   min-width: 1200;
 }
 
-.footer {
+.footer-div {
   width: 100%;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   height: 50px;
+  line-height: 50px;
   background: #ffc300;
   color: #001d3d;
   text-align: center;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+.red-heart {
+  color : #c70039;
 }
