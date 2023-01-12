@@ -3,17 +3,13 @@ import { restaurantList } from '../config'; /* Named Import*/
 import { useState } from 'react';
 
 const filterData = (searchText, restaurants) => {
-  console.log(searchText);
-  const f = restaurants.filter(restaurant => restaurant.data.name.toLowerCase().includes(searchText));
-  return f; 
+  return restaurants.filter(restaurant => restaurant.data.name.toLowerCase().includes(searchText.toLowerCase()));
 }
 
 const Body = () => {
   const [searchText, setSearchText] = useState();
   const [restaurants, setRestaurants] = useState(restaurantList);
   const [errorMsg, setErrorMsg] = useState('');
-
-
 
   const searchData = (searchText, restaurants ) => ()=> {  
     if(searchText !== '') {

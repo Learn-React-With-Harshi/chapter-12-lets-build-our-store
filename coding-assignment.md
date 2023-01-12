@@ -13,7 +13,7 @@
 
 Last chapter was the start of the application and all the components were created in the same file (app.js). It's high time to re-organise teh file structure and move components to a separate file each serving a single responsibility.
 
-For that, we need to export and import components into one another. I have documented about all ways of imports/exports in `theory-assignment.md` and implemented the same in the app. 
+For that, we need to export and import components into one another. I have documented about all ways of imports/exports in [`theory-assignment.md`](https://github.com/Learn-React-With-Harshi/chapter-05-lets-get-hooked/blob/main/theory-assignment.md) and implemented the same in the app. 
 
 After all the cleaning & restructuring, we created the search feature.
 Functionalities :
