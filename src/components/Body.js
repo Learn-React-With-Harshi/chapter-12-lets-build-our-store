@@ -30,12 +30,12 @@ const Body = () => {
 
   return (
     <div className= "container">
-    <div className="search-container"> 
-      <input type="text" placeholder=" Search for restaurant" value={searchText}
-        className="search-input" key="input-text" onChange = {(e) => setSearchText(e.target.value)}/>
-      <button className="search-btn" 
-      onClick={searchData(searchText, restaurants)}> Search </button>
-    </div>
+      <div className="search-container"> 
+        <input type="text" placeholder=" Search for restaurant" value={searchText}
+          className="search-input" key="input-text" onChange = {(e) => setSearchText(e.target.value)}/>
+        <button className="search-btn" 
+          onClick={searchData(searchText, restaurants)}> Search </button>
+      </div>
     { errorMsg && 
       <div className="error-container" id="error">
         <span className="error-msg" id="error-msg">{errorMsg}</span>
