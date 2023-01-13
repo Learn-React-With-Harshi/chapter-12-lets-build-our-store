@@ -1,4 +1,4 @@
-### Class notes `Chapter-05 Let's get hooked` (08/01/2023)
+### Class notes `Chapter-07 Finding the path` (15/01/2023)
 
 1. File structure in React 
 
