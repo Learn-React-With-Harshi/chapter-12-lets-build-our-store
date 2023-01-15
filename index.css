@@ -45,17 +45,17 @@ body,html {
   /*font-size: 18px;*/
 }
 
-.nav-items > ul > li:hover {
+/*.nav-items > ul > li:hover {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 7px;
-}
+}*/
 
 .logo {
   margin-left: 10px;
   width: 70px;
 }
 
-.cart, .profile, .home{
+.cart, .loggedOut, .loggedIn, .home{
   width: 50px;
 }
 .search-icon {
@@ -65,6 +65,7 @@ body,html {
 
 .container {
   margin-top: 90px;
+  min-height: 79vh;
 }
 
 .search-container {
@@ -88,7 +89,7 @@ body,html {
   padding : 5px;
 }
 
-.search-btn {
+.search-btn, .login-btn{
   background-color: #ffc300;
   height: 30px;
   color : #001d3d;
@@ -116,58 +117,52 @@ body,html {
   font-size: 14px;
   color : #c70039;
 }
+
+.restaurant-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap : 20px;
+  justify-content: space-evenly;
+}
 .card{
   flex-basis : 250px;
   padding: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 .card:hover {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
-
 .card > img {
   width: 100%;
 }
-
 .card-title {
   font-size: 16px;
   font-weight: bold;
   word-spacing: 2px;
 }
-
-.card-text {
-  color: gray; 
+.card-tags {
+  color: #686b78;
   font-size: 12px;
 }
-.card-params {
+.card-details {
   display: flex;
+  margin-top: 18px;
   justify-content: space-between;
   align-items: center;
+  color: #535665;
+  font-size: 12px;
+  font-weight: 600;
+  padding-bottom: 10px;
 }
-
-.card-rating {
-  width: 22px;
-  padding-left: 3px;
-  border-radius: 5px;
-  font-size: 11px;
-  color:#EEEEEE;
-}
-
-.eta {
-  font-size: 14px; 
-  color: gray; 
-  padding-left:11px; 
-  padding-right: 11px;
-}
-
-.restaurant-list {
+.rating {
   display: flex;
-  flex-wrap: wrap;
-  gap : 20px;
-  justify-content: space-evenly;
-  padding-top: 20px;
+  align-items: center;
+  height: 20px;
+  width: 43px;
+  padding: 0 5px;
+  gap: 5px;
 }
-
+/* Footer Style */
 .footer-div {
   width: 100%;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -177,23 +172,67 @@ body,html {
   color: #001d3d;
   text-align: center;
 }
-
 .footer-text {
   text-align: center;
 }
-
 .red-heart {
   color : #c70039;
 }
 
-/*TODO*/
+
+/*Shimmer CSS */
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap : 20px;
+  justify-content: space-evenly;
+}
+.shimmer-card {
+  flex-basis : 250px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-color: #d3d5df;
+  box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+}
+.shimmer-title {
+  width: 60%;
+  margin-top: 10px;
+}
+.shimmer-tags {
+  width: 80%;
+  margin-top: 4px;
+}
+.shimmer-details {
+  width: 100%;
+  margin-top: 18px;
+}
+.shimmer-container .shimmer-img {
+  height: 144px;
+  width: 230px;
+}
+
+/*Animation to Shimmer Component Cards */
+.stroke {
+  height: 15px;
+  background: #777;
+}
+.animate {
+  animation: shimmer 3s;
+  animation-iteration-count: infinite;
+  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+  background-size: 1000px 100%;
+}
+@keyframes shimmer {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-  .card {
-    flex-basis: 150px;
-    flex-wrap: wrap;
-  }
   .search-input {
     flex-basis: 300px;
     font-size: 12px;
@@ -201,5 +240,16 @@ body,html {
   .search-btn {
     flex-basis: 50px;
     font-size: 12px;
+  }
+  .card, .shimmer-card  {
+    flex-basis: 150px;
+  }
+  .card-details,  .shimmer-details{
+    flex-direction: column;
+  }
+
+  .shimmer-container .shimmer-img {
+    height: 81px;
+    width: 130px;
   }
 }

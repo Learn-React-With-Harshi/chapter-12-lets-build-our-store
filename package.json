@@ -1,5 +1,5 @@
 {
-  "name": "chapter-05-lets-get-hooked",
+  "name": "chapter-07-finding-the-path",
   "version": "1.0.0",
   "description": "Documenting my learning journey of [Namaste React Live Course](https://learn.namastedev.com/) conducted by Akshay Saini",
   "scripts": {
@@ -9,17 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Learn-React-With-Harshi/chapter-05-lets-get-hooked.git"
+    "url": "git+https://github.com/Learn-React-With-Harshi/chapter-07-finding-the-path.git"
   },
   "author": "Harshitha SV",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Learn-React-With-Harshi/chapter-05-lets-get-hooked/issues"
+    "url": "https://github.com/Learn-React-With-Harshi/chapter-07-finding-the-path/issues"
   },
-  "homepage": "https://github.com/Learn-React-With-Harshi/chapter-05-lets-get-hooked#readme",
+  "homepage": "https://github.com/Learn-React-With-Harshi/chapter-07-finding-the-path#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
