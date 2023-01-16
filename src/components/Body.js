@@ -1,7 +1,8 @@
 import { RestaurantCard } from './RestaurantCard'; /* Import using Named Import */
 import { useState, useEffect } from 'react';
 import Shimmer from './Shimmer'; /* Shimmer component to display before page load */
-import { GET_RES_API_URL } from '../config'; /* url to get Restaurant data */
+import { GET_RESTAURANTS_LIST } from '../config'; /* url to get Restaurant data */
+import { Link } from 'react-router-dom';
 
 const filterData = (searchText, restaurants) => {
   return restaurants.filter(restaurant => restaurant.data.name.toLowerCase().includes(searchText.toLowerCase()));
@@ -20,7 +21,7 @@ const Body = () => {
 
   const getRestaurants = async () => {
     try {
-      const response = await fetch(GET_RES_API_URL);
+      const response = await fetch(GET_RESTAURANTS_LIST);
       const res_data = await response.json();
       setAllRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
@@ -69,7 +70,11 @@ return (
     { allRestaurants?.length === 0 ? (<Shimmer />) : 
     <div className="restaurant-container">
       {filteredRestaurants.map((restaurant) => {
-        return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
+        return ( <Link
+          className="link-styles" to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
+          <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+        </Link>
+        )
       })}
     </div>
     }

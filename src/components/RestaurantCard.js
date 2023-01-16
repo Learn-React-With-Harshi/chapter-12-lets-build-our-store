@@ -1,4 +1,4 @@
-import {IMG_CDN} from "../config";
+import {RES_IMG_CDN } from "../config";
 import { AiFillStar } from "react-icons/ai";
 
 export const RestaurantCard = ({name, cuisines, cloudinaryImageId, avgRating, slaString, costForTwoString}) => {
@@ -9,7 +9,7 @@ export const RestaurantCard = ({name, cuisines, cloudinaryImageId, avgRating, sl
   
   return (
     <div className="card">
-      <img className="card-img" src={ IMG_CDN + cloudinaryImageId } alt={name}/>
+      <img className="card-img" src={ RES_IMG_CDN  + cloudinaryImageId } alt={name}/>
       <div className="card-body">
         <h6 className="card-title">{name}</h6>
         <p className="card-tags">{cuisines.join(", ")}</p>

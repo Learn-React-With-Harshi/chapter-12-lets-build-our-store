@@ -4,6 +4,7 @@ import loggedIn from '../../assets/images/loggedin.png';
 import loggedOut from '../../assets/images/loggedout.png';
 import home from '../../assets/images/home.png';
 import {useState} from 'react';
+import {Link} from 'react-router-dom';
 
 export const ImgComponent = ({item, itemname}) => {
   return(
@@ -22,8 +23,8 @@ export const NavComponent = () => {
   return (
     <div className="nav-items">
     <ul>
-      <li> <ImgComponent item={home} itemname={"home"} /> </li>
-      <li> <ImgComponent item={cart} itemname={"cart"}/> </li>
+      <li> <Link to="/about"><ImgComponent item={home} itemname={"home"} /> </Link></li>
+      <li> <Link to="/contact"><ImgComponent item={cart} itemname={"cart"}/> </Link></li>
       <li> <img src={isLoggedIn ? loggedIn : loggedOut } className={isLoggedIn?  "loggedIn" : "loggedOut" } 
         alt ={isLoggedIn?  "loggedIn" : "loggedOut" } 
         onClick={()=> {setIsLoggedIn(!isLoggedIn);}}/>
