@@ -21,9 +21,7 @@ const Body = () => {
 
   const getRestaurants = async () => {
     try {
-      const response = await fetch(GET_RESTAURANTS_LIST, {
-        mode : 'no-cors'
-      });
+      const response = await fetch(GET_RESTAURANTS_LIST);
       const res_data = await response.json();
       setAllRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
