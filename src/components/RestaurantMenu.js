@@ -48,7 +48,7 @@ const RestaurantMenu = () => {
         <div className="menu-items-container">
           <div className="menu-title-wrap">
             <h3 className="menu-title">Recommended</h3>
-            <p className="menu-count">{restaurant?.menu?.items?.length}</p>
+            <p className="menu-count">{Object.keys(restaurant?.menu?.items).length} ITEMS</p>
           </div>
           <div className="menu-items-list">
             { Object.values(restaurant?.menu?.items).map( item => 
