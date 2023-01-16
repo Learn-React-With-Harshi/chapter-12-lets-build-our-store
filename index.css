@@ -198,8 +198,9 @@ a {
   width : 100%;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #145270;
+  background-color: #001d3d;
   color : #eee;
+  padding: 30px;
 }
 .restaurant-img {
   width : 254px;
@@ -209,6 +210,7 @@ a {
   display: flex;
   flex-direction: column;
   flex-basis: 540px;
+  margin: 20px;
 }
 .restaurant-title {
   font-size: 32px;
@@ -252,30 +254,66 @@ a {
 
 .menu-items-container { 
   margin-top: 30px;
-  width : 648px;
+  width : 848px;
 }
 
 .menu-items-list {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+
 }
 
 .menu-item {
   display: flex;
   justify-content: space-between;
-  max-width : 538px;
-  max-height : 120px;
-
+  max-width : 8488px;
+  max-height : 250px;
+  padding : 20px;
+  border-bottom: rgba(40,44,63,.45) 0.5px solid;
 }
 .menu-item-details {
   display: flex;
   flex-direction: column;
 }
-.menu-item-img {
-  width : 254px;
-  height: 165px;
-}
+.menu-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width : 118px;
+  height: 150px;
 
+}
+.menu-item-img {
+  width : 118px;
+  height: 96px;
+}
+.add-btn {
+  background-color: #ffc300;
+  color: #001d3d;
+  width: 94px;
+  height: 34px;
+  cursor: pointer;
+  outline: none;
+  border-color: #ffc300;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+.item-desc {
+  margin-top: 14px;
+  line-height: 1.3;
+  color: rgba(40,44,63,.45);
+  width: 70%;
+  letter-spacing: -.3px;
+  font-size: 1rem;
+}
+.item-cost {
+  margin-top: 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #3e4152;
+}
 
 /*Shimmer CSS */
 .shimmer-container {
@@ -348,6 +386,16 @@ a {
   .shimmer-container .shimmer-img {
     height: 81px;
     width: 130px;
+  }
+
+  .restaurant-details {
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  .restaurant-img {
+    width : 130px;
+    height: 81px;
   }
 }
 

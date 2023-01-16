@@ -23,7 +23,7 @@ export const NavComponent = () => {
   return (
     <div className="nav-items">
     <ul>
-      <li> <Link to="/about"><ImgComponent item={home} itemname={"home"} /> </Link></li>
+      <li> <Link to="/"><ImgComponent item={home} itemname={"home"} /> </Link></li>
       <li> <Link to="/contact"><ImgComponent item={cart} itemname={"cart"}/> </Link></li>
       <li> <img src={isLoggedIn ? loggedIn : loggedOut } className={isLoggedIn?  "loggedIn" : "loggedOut" } 
         alt ={isLoggedIn?  "loggedIn" : "loggedOut" } 

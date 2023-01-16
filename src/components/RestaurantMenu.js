@@ -45,7 +45,6 @@ const RestaurantMenu = () => {
       </div>
 
       <div className="restaurant-menu-content">
-        <div className="recommendation-widget"></div>
         <div className="menu-items-container">
           <div className="menu-title-wrap">
             <h3 className="menu-title">Recommended</h3>
@@ -56,10 +55,14 @@ const RestaurantMenu = () => {
             <div className="menu-item" key={item?.id}>
               <div className="menu-item-details">
                 <h3 className="item-title">{item?.name}</h3>
-                <p className="item-cost">{item?.price}</p>
+                <p className="item-cost">{(item?.price > 0) ?
+                  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR'}).format(item?.price/100 ): " " } </p>
                 <p className="item-desc">{item?.description}</p>
               </div>
-              <img className="menu-item-img" src={ ITEM_IMG_CDN  + item?.cloudinaryImageId } alt={item?.name}/>
+              <div className="menu-img-wrapper">
+                { item?.cloudinaryImageId  && <img className="menu-item-img" src={ ITEM_IMG_CDN  + item?.cloudinaryImageId } alt={item?.name}/> }
+                <button className="add-btn"> ADD +</button>
+              </div>
             </div>
             )}
           </div>
