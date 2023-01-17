@@ -1,6 +1,7 @@
+import { useState } from "react";
 
 const Contact = () => {
-  return (
+  return(
     <div className="container">
       Contact
     </div>
