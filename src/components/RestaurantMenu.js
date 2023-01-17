@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { GET_RESTAURANT_MENU, RES_IMG_CDN, ITEM_IMG_CDN } from "../config";
 import {useEffect, useState } from 'react';
-import Shimmer from "./Shimmer";
+import { MenuShimmer } from "./Shimmer";
 import {AiFillStar} from 'react-icons/ai';
 
 const RestaurantMenu = () => {
@@ -24,7 +24,7 @@ const RestaurantMenu = () => {
   };
 
   return !restaurant ? (
-    <Shimmer />
+    <MenuShimmer />
     ) : (
     <div className="restaurant-menu">
       <div className="restaurant-summary">

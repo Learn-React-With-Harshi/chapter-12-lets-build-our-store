@@ -25,6 +25,11 @@ a {
   background-color: #ffc300;
 }
 
+.bg-shimmer-dark {
+  border-color: #d3d5df;
+  box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -138,8 +143,7 @@ a {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .card > img {
-  width: 230px;
-  height : 144px;
+  width : 100%;
 }
 .card-title {
   font-size: 16px;
@@ -195,7 +199,7 @@ a {
 .restaurant-summary {
   display: flex;
   height : 245px;
-  width : 100%;
+  flex-basis : 100%;
   justify-content: space-evenly;
   align-items: center;
   background-color: #001d3d;
@@ -278,7 +282,7 @@ a {
 .menu-item {
   display: flex;
   justify-content: space-between;
-  max-width : 8488px;
+  flex-basis: 848px;
   max-height : 250px;
   padding : 20px;
   border-bottom: rgba(40,44,63,.45) 0.5px solid;
@@ -294,7 +298,6 @@ a {
   align-items: center;
   width : 118px;
   height: 150px;
-
 }
 .menu-item-img {
   width : 118px;
@@ -311,19 +314,25 @@ a {
   margin-top: 10px;
   border-radius: 5px;
 }
+
+.item-title {
+  width: 60%;
+}
 .item-desc {
   margin-top: 14px;
   line-height: 1.3;
   color: rgba(40,44,63,.45);
-  width: 70%;
+  width: 80%;
   letter-spacing: -.3px;
   font-size: 1rem;
+  overflow: hidden;
 }
 .item-cost {
   margin-top: 4px;
   font-size: 1rem;
   font-weight: 400;
   color: #3e4152;
+  width : 40%
 }
 
 /*Shimmer CSS */
@@ -357,9 +366,64 @@ a {
   width: 230px;
 }
 
+.restaurant-summary .shimmer-img {
+  height: 144px;
+  width: 230px;
+}
+
+.shimmer-menu-card {
+  display: flex;
+  justify-content: space-evenly;
+  width : 848px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-color: #d3d5df;
+  box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+}
+.shimmer-item-details{
+  width : 438px;
+}
+
+.shimmer-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width : 118px;
+  height: 150px;
+}
+.shimmer-img-wrapper .shimmer-img {
+  width : 118px;
+  height: 96px;
+}
+
+.shimmer-img-wrapper .shimmer-btn {
+  width: 94px;
+  height: 34px;
+  margin-top: 10px;
+}
+
+.shimmer-w60 {
+  width: 60%;
+  margin-top: 10px;
+}
+
+.shimmer-w40 {
+  width: 40%;
+  margin-top: 10px;
+}
+
+.shimmer-w20 {
+  width: 20%;
+  margin-top: 4px;
+}
 /*Animation to Shimmer Component Cards */
 .stroke {
   height: 15px;
+  background: #777;
+}
+
+.stroke-color {
   background: #777;
 }
 .animate {
@@ -387,14 +451,19 @@ a {
     flex-basis: 50px;
     font-size: 12px;
   }
-  .card, .shimmer-card  {
+  .link-styles, .card {
+    flex-basis: 150px;
+  } 
+  .shimmer-card  {
     flex-basis: 150px;
   }
+
   .card-details,  .shimmer-details{
     flex-direction: column;
+    align-items: flex-start;
   }
 
-  .shimmer-container .shimmer-img {
+  .card > img, .shimmer-container .shimmer-img {
     height: 81px;
     width: 130px;
   }

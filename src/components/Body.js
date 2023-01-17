@@ -23,6 +23,7 @@ const Body = () => {
     try {
       const response = await fetch(GET_RESTAURANTS_LIST);
       const res_data = await response.json();
+      console.log(res_data);
       setAllRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
     } catch (error) {
