@@ -59,6 +59,7 @@ a {
 
 .nav-btn:hover {
   background-color: #ffc300;
+  cursor: pointer;
 }
 
 .nav-btn {
@@ -462,7 +463,6 @@ a {
     height: 20px;
     font-size: 12px ;
   }
-
   .search-input {
     flex-basis: 300px;
     font-size: 12px;

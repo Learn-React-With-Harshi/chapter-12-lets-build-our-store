@@ -12,6 +12,7 @@ export const GET_RESTAURANT_MENU = "https://www.swiggy.com/dapi/menu/v4/full?lat
 
 
 export const SHIMMER_RES_CARDS_COUNT  = 8;
+export const SHIMMER_MENU_ITEMS_COUNT = 4;
 
 export const restaurantList = [
   {

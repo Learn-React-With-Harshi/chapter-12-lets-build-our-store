@@ -1,5 +1,5 @@
 import logo from '../../assets/images/logo-main.png';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
 export const ImgComponent = ({item, itemname}) => {
@@ -15,30 +15,21 @@ export const Title = () => {
 };
 
 export const NavComponent = (user) => {
-
   const [isLoggedIn, setIsLoggedIn] = useState(user.authenticated || false);
   const navigate = useNavigate();
   
-  console.log("In Nav Compoenent", user);
+  console.log("In Nav Component", user);
+  
   const toggleLogin = () => {
     console.log("isLoggedIn", isLoggedIn);
-    
-    if(!user.authenticated ) {
-      setIsLoggedIn(!isLoggedIn);
-      navigate('/login', { state: { authenticated: false } });
-    } else {
-      setIsLoggedIn(!isLoggedIn);
-      
-        navigate('/login', { state: { authenticated: false, msg: "You have logged out of Insta Food App. " } });
-      
-      
-    }
-    
+    setIsLoggedIn(!isLoggedIn);
+    let params = (!user.authenticated ) ? { state: { authenticated: false } } :  { state: { authenticated: false, msg: "You have logged out of Insta Food App. " } } ;
+    navigate('/login', params );
   }
 
   return (
     <div className="nav-items">
-     <ul>
+    <ul>
         <li> <Link to="/"><button className="nav-btn"> Home</button></Link></li>
         <li> <Link to="/about"><button className="nav-btn"> About</button></Link> </li>
         <li> <Link to="/contact"><button className="nav-btn"> Contact</button></Link> </li>
@@ -48,15 +39,7 @@ export const NavComponent = (user) => {
   );
 }
 
-export const Login = () => {
-  return (
-    <div>
-      <button className="login-btn">Login</button>
-    </div>
-  )
-}
 export const Header = (state) => {
-  
   return (
     <div className="header">
       <Title />

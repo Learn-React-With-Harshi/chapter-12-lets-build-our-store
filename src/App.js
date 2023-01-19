@@ -51,11 +51,6 @@ const appRouter = createBrowserRouter([
     path : '/login',
     element      : <Login />,
     errorElement : <Error />,
-  },
-  {
-    path : '/logout',
-    element      : <Login />,
-    errorElement : <Error />,
   }
 ]);
 

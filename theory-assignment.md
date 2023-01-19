@@ -40,14 +40,14 @@ export default function App() {
 
 Syntax : useEffect(setup,[dependencies]? )
 
-Case 1 : useEffect(setup) 
-  When the dependency array is not included in the arguments of useEffect() hook, the setup function will be executed `every time` the component is rendered and re-rendered.
+`Case 1 : useEffect(setup)` 
+   When the dependency array is not included in the arguments of useEffect() hook, the setup function will be executed `every time` the component is rendered and re-rendered.
 
-Case 2 : useEffect(setup,[])
- When the dependency array is empty in the arguments of useEffect() hook, the setup function will be executed `only one time` during the initial render of the component.
+`Case 2 : useEffect(setup,[])`
+   When the dependency array is empty in the arguments of useEffect() hook, the setup function will be executed `only one time` during the initial render of the component.
 
-Case 3 : useEffect(setup, [state])
- When the dependency array contains an array of states,  the setup function will be executed  `one time` during the initial render of the component and also `whenever` there is a `change in the state`.
+`Case 3 : useEffect(setup, [state])`
+   When the dependency array contains an array of states,  the setup function will be executed  `one time` during the initial render of the component and also `whenever` there is a `change in the state`.
 
 ### 4. What is SPA?
 

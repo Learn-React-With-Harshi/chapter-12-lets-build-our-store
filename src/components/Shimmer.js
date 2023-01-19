@@ -1,4 +1,5 @@
 import { SHIMMER_RES_CARDS_COUNT } from '../config';
+import { SHIMMER_MENU_ITEMS_COUNT } from '../config';
 
 const CardShimmer = () => {
   return (
@@ -31,7 +32,7 @@ export const MenuShimmer = () => {
             <p className="shimmer-w20 stroke animate"></p>
           </div>
           <div className="menu-items-list">
-            { Array.from({length:SHIMMER_RES_CARDS_COUNT}).map( (element, index)  => 
+            { Array.from({length:SHIMMER_MENU_ITEMS_COUNT}).map( (element, index)  => 
             <div className="shimmer-menu-card" key={index}>
               <div className="shimmer-item-details">
                 <h3 className="shimmer-w40  stroke animate"></h3>
