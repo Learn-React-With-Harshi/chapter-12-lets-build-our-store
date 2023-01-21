@@ -91,6 +91,7 @@ a {
 .container {
   margin-top: 90px;
   min-height: 79vh;
+  
 }
 
 .search-container {
@@ -350,6 +351,190 @@ a {
   width : 40%
 }
 
+/* About */
+.about-container {
+  margin-top: 90px;
+  min-height: 79vh;
+  display: flex;
+  justify-content: space-around;
+}
+.profile-container {
+  padding: 20px 10px;
+  width: 30%;
+  height : 50%;
+  margin: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  background: #fff;
+}
+.profile-title, .blog-list-title {
+  font-size: 28px;
+  line-height: 1.1;
+  justify-content: center;
+  text-align: center;
+  color: #444;
+}
+
+.blog-container {
+  padding: 20px 10px;
+  width: 70%;
+  height : auto;
+  margin: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  background: #fff;
+}
+/* Profile Styles */
+
+.profile-card {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap : 20px;
+}
+.profile-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  vertical-align: middle;
+  border-style: none;
+}
+.profile-bio {
+  font-size: 16px;
+  text-align: center;
+  color: #999;
+  padding-top: 20px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.social-media-div {
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+}
+
+
+.icon-button {
+  margin-bottom: 10px;
+  
+}
+
+.icon-button i {
+  color: #fff;
+  border-radius: 2.6rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.4rem;
+  height: 2.6rem;
+  line-height: 3rem;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 2.6rem;
+  margin: 0 5px 10px;
+}
+
+.github i{
+  background-color: #333;
+}
+.linkedin i{
+  background-color: #0e76a8;
+}
+.google i {
+  background-color: #ea4335;
+}
+/* Blog Repo Styles  */
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  gap : 20px;
+}
+.blog-user-summary {
+  display: flex;
+  gap : 20px;
+  padding: 20px 10px;
+  margin: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+  background: #fff;
+}
+.blog-user-img {
+  border-radius: 5%;
+  width: 150px;
+  height: 150px;
+  vertical-align: middle;
+  border-style: none;
+}
+.blog-title {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #444;
+}
+.blog-bio {
+  font-size: 16px;
+  color: #999;
+  padding-top: 20px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+.blog-metrics {
+  display: flex;
+  gap: 50px;
+
+}
+.blog-followers, .blog-repo-count {
+  display: flex;
+  gap: 5px;
+  color: #444;
+}
+
+.repo-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.repo-list-title {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  gap : 20px;
+  padding: 20px;
+  border: 1px solid #eee;
+}
+.repo-title {
+  font-size: 20px;
+  color: #444;
+}
+.repo-title:hover, .repo-demo {
+  text-decoration: underline;
+  color: #1890ff;
+}
+.repo-bio {
+  font-size: 16px;
+  color: #999;
+}
+.repo-demo {
+  font-size: 16px;
+  color: #1890ff;
+  font-weight: 400;
+}
+
 /*Shimmer CSS */
 .shimmer-container {
   display: flex;
@@ -497,6 +682,51 @@ a {
     width : 130px;
     height: 81px;
   }
+  .about-container {
+    flex-direction: column;
+  }
+
+  .profile-container {
+    width: auto;
+  }
+  .blog-container {
+    width: auto;
+
+  }
+  .blog-user-summary {
+    flex-direction: column;
+    align-items: center;
+  }
+  .blog-user-img {
+    border-radius: 5%;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    
+    border-style: none;
+  }
+  .blog-title {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #444;
+  }
+  .blog-bio {
+    font-size: 16px;
+    color: #999;
+    padding-top: 20px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  .blog-metrics {
+    display: flex;
+    gap: 50px;
+  
+  }
+  .blog-followers, .blog-repo-count {
+    display: flex;
+    gap: 5px;
+    color: #444;
+  }
 }
 
 
@@ -551,3 +781,4 @@ a {
   outline: none;
   font-size: 16px;
 } 
+

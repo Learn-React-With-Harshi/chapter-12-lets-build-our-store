@@ -6,6 +6,7 @@ import * as MainHeader from "./components/Header"; /* Imported using import * as
 import Body from "./components/Body"; /* Imported using default export */
 import { Footer as MainFooter } from "./components/Footer"; /* Imported using Named Import Map */
 import About from "./components/About";
+import Profile from "./components/Profile";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
@@ -31,7 +32,11 @@ const appRouter = createBrowserRouter([
     children     : [
       {
         path     : "/about",
-        element  : <About />
+        element  : <About />,
+        children : [{
+          path    : "profile",
+          element : <Profile />
+        }]
       },
       {
         path     : "/contact",
