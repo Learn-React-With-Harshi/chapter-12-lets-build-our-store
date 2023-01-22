@@ -6,12 +6,16 @@ class Repo extends Component {
     console.log("In Repo Component(Child of Blog) - constructor")
   }
   componentDidMount() {
+    this.timer = setInterval(()=>{
+      console.log("Warning !!! I am printing for every 1 min !!! ")
+    }, 1000);
     console.log("In Repo Component(Child of Blog) - componentDidMount");
   }
   componentDidUpdate() {
     console.log("In Repo Component(Child of Blog) - componentDidUpdate")
   }
   componentWillUnmount() {
+    clearInterval(this.timer);
     console.log("In Repo Component(Child of Blog) - componentWillUnmount")
   }
   render() {
