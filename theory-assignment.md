@@ -2,7 +2,7 @@
 # `Learn React With Harshi` Series 
    Documenting my learning journey of [Namaste React Live Course](https://learn.namastedev.com/) conducted by Akshay Saini
 
-## Theory Assignment: `Chapter - 07 Let's get Classy` (21/01/2023)
+## Theory Assignment: `Chapter - 09 Optimizing our app` (22/01/2023)
 
 ### 1. How do you create Nested Routes react-router-dom cofiguration</li>
 	

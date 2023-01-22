@@ -1,5 +1,5 @@
 {
-  "name": "chapter-08-lets-get-classy",
+  "name": "chapter-09-optimizing-our-app",
   "version": "1.0.0",
   "description": "Documenting my learning journey of [Namaste React Live Course](https://learn.namastedev.com/) conducted by Akshay Saini",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Learn-React-With-Harshi/chapter-07-finding-the-path.git"
+    "url": "git+https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app.git"
   },
   "author": "Harshitha SV",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Learn-React-With-Harshi/chapter-07-finding-the-path/issues"
+    "url": "https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app/issues"
   },
-  "homepage": "https://github.com/Learn-React-With-Harshi/chapter-07-finding-the-path#readme",
+  "homepage": "https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app#readme",
   "dependencies": {
     "formik": "^2.2.9",
     "react": "^18.2.0",
