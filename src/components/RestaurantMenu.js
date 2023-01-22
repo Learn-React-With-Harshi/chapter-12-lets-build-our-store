@@ -1,27 +1,13 @@
 import { useParams } from "react-router-dom";
-import { GET_RESTAURANT_MENU, RES_IMG_CDN, ITEM_IMG_CDN } from "../config";
-import {useEffect, useState } from 'react';
+import { RES_IMG_CDN, ITEM_IMG_CDN } from "../config";
 import { MenuShimmer } from "./Shimmer";
 import {AiFillStar} from 'react-icons/ai';
+import useGetRestaurants from "../utils/useGetRestaurants";
 
 const RestaurantMenu = () => {
   const { resId } = useParams(); /* Read dynamic URL params */
 
-  const [restaurant, setRestaurant] = useState(null);
-
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
-
-  const getRestaurantInfo = async () => {
-    try {
-      const response = await fetch(GET_RESTAURANT_MENU + resId);
-      const res_data = await response.json();
-      setRestaurant(res_data.data)
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const restaurant  = useGetRestaurants(resId); /* Passing resId to Custom Hooks to fetch restaurant details and returns it */
 
   return !restaurant ? (
     <MenuShimmer />

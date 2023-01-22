@@ -1,6 +1,7 @@
 import logo from '../../assets/images/logo-main.png';
 import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
+import useOnline from '../utils/useOnline';
 
 export const ImgComponent = ({item, itemname}) => {
   return(
@@ -18,6 +19,9 @@ export const NavComponent = (user) => {
   const [isLoggedIn, setIsLoggedIn] = useState(user.authenticated || false);
   const navigate = useNavigate();
   
+  const isOnline = useOnline();
+
+
   console.log("In Nav Component", user);
   
   const toggleLogin = () => {
@@ -27,12 +31,15 @@ export const NavComponent = (user) => {
     navigate('/login', params );
   }
 
+  
   return (
     <div className="nav-items">
     <ul>
+        <li> {isOnline ? "online" : "offline" }</li>
         <li> <Link to="/"><button className="nav-btn"> Home</button></Link></li>
         <li> <Link to="/about"><button className="nav-btn"> About</button></Link> </li>
         <li> <Link to="/contact"><button className="nav-btn"> Contact</button></Link> </li>
+        <li> <Link to="/instamart"><button className="nav-btn"> Instamart</button></Link></li>
         <li> <button className="nav-btn" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout" : "Login" } </button></li>
       </ul> 
     </div>

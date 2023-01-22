@@ -3,10 +3,8 @@ import { useState, useEffect } from 'react';
 import Shimmer from './Shimmer'; /* Shimmer component to display before page load */
 import { GET_RESTAURANTS_LIST } from '../config'; /* url to get Restaurant data */
 import { Link } from 'react-router-dom';
-
-const filterData = (searchText, restaurants) => {
-  return restaurants.filter(restaurant => restaurant.data.name.toLowerCase().includes(searchText.toLowerCase()));
-}
+import { filterData } from '../utils/helper';
+import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [searchText, setSearchText] = useState();
@@ -14,8 +12,10 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [errorMsg, setErrorMsg] = useState('');
 
+  const isOnline = useOnline(); 
+
+  
   useEffect(()=>{
-   
     getRestaurants();
   },[]);
 
@@ -42,16 +42,16 @@ const Body = () => {
     }
   } else {
       if(errorMsg) setErrorMsg('');
-      
       setAllRestaurants(allRestaurants);
     }
   }
 
-
+  if(!isOnline) {
+    return <div className="container"><h1>Offline, please check your internet connection </h1></div>
+  } 
 
 // Don't render component (Early return)
 if (!allRestaurants) {
- 
   return null;
 }
 return (

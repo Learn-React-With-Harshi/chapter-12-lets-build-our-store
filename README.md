@@ -3,14 +3,12 @@
 
 ## Class Summary `Chapter - 09 Optimizing our app` (22/01/2023)
   
-   Find my version of detailed explanation of these concepts in [theory-assignment.md](https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app/blob/main/theory-assignment.md). Check [coding-assignment.md](https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app/blob/main/coding-assignment.md) for all the features that I implemented in this chapter.
- 
-Definitely this chapter deserves two lines :
+  Find my version of detailed explanation of these concepts in [theory-assignment.md](https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app/blob/main/theory-assignment.md). Check [coding-assignment.md](https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app/blob/main/coding-assignment.md) for all the features that I implemented in this chapter.
 
 One line about this chapter : ``
 
 
-Check out [Chapter-09 Live](https://learn-react-with-harshi-chapter-09.netlify.app/) for the live demo of this chapter's coding assignment `(InstaFood Version 4.0)`. Also check out the following chapters to see how InstaFood has progressed. Happy Reacting !!!
+Check out [Chapter-09 Live](https://learn-react-with-harshi-chapter-09.netlify.app/) for the live demo of this chapter's coding assignment `(InstaFood Version 5.0)`. Also check out the following chapters to see how InstaFood has progressed. Happy Reacting !!!
 
 
 If you are interested in other chapters of this series, please browse through the [my repositories](https://github.com/orgs/Learn-React-With-Harshi/repositories)
