@@ -1,8 +1,7 @@
 import React from 'react';
 import { FiUsers } from "react-icons/fi";
 import { RiGitRepositoryLine } from "react-icons/ri";
-import {Link} from 'react-router-dom';
-
+import Repo from './RepoClass';
 class Blog extends React.Component {
   constructor(props){
     super(props);
@@ -14,8 +13,6 @@ class Blog extends React.Component {
       repoList : []
     }
     console.log("Blog Component - constructor with props : ", this.props.name, " from parent and state : ", this.state, " from this component");
-
-    
   }
 
   async componentDidMount() {
@@ -35,11 +32,9 @@ class Blog extends React.Component {
   componentDidUpdate() {
     console.log("Blog Component - componentDidUpdate")
   }
-   
   componentWillUnmount() {
     console.log("Blog Component - componentWillUnmount")
   }
-
   render() {
     const { blog, repoList } = this.state;
     console.log("Blog Component - render");
@@ -68,11 +63,7 @@ class Blog extends React.Component {
           {
             repoList.filter(repo => (repo.name !== '.github')).map(repo => {
               return (
-                <div className="repo-card" key={repo.id}>
-                  <a target="_blank" href={repo.html_url}><h3 className="repo-title">{repo.name}</h3></a>
-                  <p className="repo-bio">{repo.description}</p>
-                  { repo.name !== 'table-of-contents' && <a target="_blank" href={repo.homepage}><h4 className="repo-demo">Show live demo</h4></a> }
-                </div>
+                <Repo {...repo} key={repo.id}/>
               )
             })
           }

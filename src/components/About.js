@@ -7,9 +7,6 @@ class About extends Component {
     console.log("About(parent) - constructor");
   }
 
-  componentDidMount() {
-    console.log("About - componentDidMount");
-  }
   componentDidUpdate() {
     console.log("About Component - componentDidUpdate")
   }
