@@ -1,6 +1,7 @@
 import ProfileClass from "./ProfileClass";
 import BlogClass from "./BlogClass";
 import {Component} from 'react'; /* One way to import named import - Component from React library */
+import { GITHUB_USER_NAME, GITHUB_BLOG_NAME } from "../config";
 class About extends Component {
   constructor(props) {
     super(props);
@@ -22,11 +23,11 @@ class About extends Component {
       <div className="about-container">
         <div className="profile-container">
           <h1 className="profile-title">About Me</h1>
-          <ProfileClass name={"HarshithaSolai"}/>  { /* Passing props from parent to child */ }
+          <ProfileClass name={GITHUB_USER_NAME}/>  { /* Passing props from parent to child */ }
         </div>
         <div className="blog-container">
           <h1 className="blog-list-title">About this project</h1>
-          <BlogClass name={"Learn-React-With-Harshi"}/> { /* Passing props from parent to child */ }
+          <BlogClass name={GITHUB_BLOG_NAME}/> { /* Passing props from parent to child */ }
         </div>  
       </div>
     )

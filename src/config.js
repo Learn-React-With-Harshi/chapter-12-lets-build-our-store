@@ -10,9 +10,17 @@ export const ITEM_IMG_CDN  = "https://res.cloudinary.com/swiggy/image/upload/fl_
 export const GET_RESTAURANTS_LIST = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING";
 export const GET_RESTAURANT_MENU = "https://www.swiggy.com/dapi/menu/v4/full?lat=12.9351929&lng=77.62448069999999&menuId=";
 
-
+/* Shimmer - Number of cards & items to be displayed */
 export const SHIMMER_RES_CARDS_COUNT  = 8;
 export const SHIMMER_MENU_ITEMS_COUNT = 4;
+
+/* Github - username, blog name */ 
+export const GITHUB_USER_NAME = "HarshithaSolai"
+export const GITHUB_BLOG_NAME = "Learn-React-With-Harshi"
+
+/* Github API getuser */ 
+export const GITHUB_GET_USER = "https://api.github.com/users/";
+
 
 export const restaurantList = [
   {

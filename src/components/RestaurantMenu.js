@@ -2,12 +2,12 @@ import { useParams } from "react-router-dom";
 import { RES_IMG_CDN, ITEM_IMG_CDN } from "../config";
 import { MenuShimmer } from "./Shimmer";
 import {AiFillStar} from 'react-icons/ai';
-import useGetRestaurants from "../utils/useGetRestaurants";
+import useRestaurants from "../utils/useRestaurants";
 
 const RestaurantMenu = () => {
   const { resId } = useParams(); /* Read dynamic URL params */
 
-  const restaurant  = useGetRestaurants(resId); /* Passing resId to Custom Hooks to fetch restaurant details and returns it */
+  const restaurant  = useRestaurants(resId); /* Passing resId to Custom Hooks to fetch restaurant details and returns it */
 
   return !restaurant ? (
     <MenuShimmer />
