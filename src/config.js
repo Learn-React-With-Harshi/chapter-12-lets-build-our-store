@@ -21,6 +21,13 @@ export const GITHUB_BLOG_NAME = "Learn-React-With-Harshi"
 /* Github API getuser */ 
 export const GITHUB_GET_USER = "https://api.github.com/users/";
 
+/* Social Media Links */ 
+export const GITHUB_LINK = "https://github.com/HarshithaSolai"  ;
+export const LINKEDIN_LINK= "https://www.linkedin.com/in/harshitha-sv/" ;
+export const GMAIL_LINK  = "mailto:solaiharshitha0@gmail.com";
+
+
+
 
 export const restaurantList = [
   {

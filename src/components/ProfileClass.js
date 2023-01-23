@@ -1,6 +1,6 @@
 import React from 'react';
 import Social from './Social';
-
+import { GITHUB_GET_USER } from '../config';
 class Profile extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ class Profile extends React.Component {
 
   async componentDidMount() {
     console.log("Profile Component - componentDidMount", this.props.name);
-    const data = await fetch (`https://api.github.com/users/${this.props.name}`);
+    const data = await fetch (GITHUB_GET_USER + this.props.name);
     const json = await data.json();
   
     this.setState({

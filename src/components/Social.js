@@ -1,6 +1,6 @@
 import React from 'react';
 import {SiGoogle, SiLinkedin, SiGithub } from 'react-icons/si';
-
+import { GITHUB_LINK, GMAIL_LINK, LINKEDIN_LINK } from '../config'; 
 class Social extends React.Component {
   constructor(props) {
     super(props);
@@ -26,9 +26,9 @@ class Social extends React.Component {
     return (
       
           <div className="social-media-div">
-            <a href="https://github.com/HarshithaSolai" className="icon-button github" target="_blank"><i ><SiGithub /></i><span></span></a>
-            <a href="https://www.linkedin.com/in/harshitha-sv/" className="icon-button linkedin" target="_blank"><i><SiLinkedin/></i><span></span></a>
-            <a href="mailto:solaiharshitha0@gmail.com" className="icon-button google"><i className=""><SiGoogle/></i><span></span></a>
+            <a href={GITHUB_LINK} className="icon-button github" target="_blank"><i ><SiGithub /></i><span></span></a>
+            <a href={LINKEDIN_LINK} className="icon-button linkedin" target="_blank"><i><SiLinkedin/></i><span></span></a>
+            <a href={GMAIL_LINK} className="icon-button google"><i className=""><SiGoogle/></i><span></span></a>
           </div>
         
     )
