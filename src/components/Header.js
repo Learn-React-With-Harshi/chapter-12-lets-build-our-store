@@ -35,12 +35,10 @@ export const NavComponent = (user) => {
   return (
     <div className="nav-items">
     <ul>
-        <li> {isOnline ? "online" : "offline" }</li>
         <li> <Link to="/"><button className="nav-btn"> Home</button></Link></li>
         <li> <Link to="/about"><button className="nav-btn"> About</button></Link> </li>
-        <li> <Link to="/contact"><button className="nav-btn"> Contact</button></Link> </li>
         <li> <Link to="/instamart"><button className="nav-btn"> Instamart</button></Link></li>
-        <li> <button className="nav-btn" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout" : "Login" } </button></li>
+        <li> <button className="nav-btn" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout" : "Login" }  <span className={isOnline ? "online" : "offline" }>●</span></button></li>
       </ul> 
     </div>
   );

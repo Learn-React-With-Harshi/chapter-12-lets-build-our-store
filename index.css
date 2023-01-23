@@ -74,6 +74,13 @@ a {
   font-size: 16px;
 }
 
+.online {
+  color: green;
+}
+
+.offline {
+  color: red;
+}
 
 .logo {
   margin-left: 10px;
