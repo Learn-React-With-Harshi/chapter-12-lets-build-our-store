@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { GET_RESTAURANT_MENU} from "../config";
 
 
-const useRestaurants = (resId) => {
+const useRestaurant = (resId) => {
   const [restaurant, setRestaurant] = useState(null); 
 
   useEffect(() => {
@@ -23,4 +23,4 @@ const useRestaurants = (resId) => {
 
 }
 
-export default useRestaurants;
+export default useRestaurant;
