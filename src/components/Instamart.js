@@ -1,7 +1,7 @@
 
 const Instamart = () => {
   return (
-    <div class="container">Instamart</div>
+    <div className="container">Instamart</div>
   )
 }
 
