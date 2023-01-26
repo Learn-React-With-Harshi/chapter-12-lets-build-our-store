@@ -5,7 +5,7 @@
 
 ## Build a Food Ordering App - Chapter-08 features
 
-1. Create your custom hooks.
+### 1. Create your custom hooks.
 
   `Custom Hooks` are utility/helper functions that can be reused. When you have some logic in a component that needs to be used by multiple components, we can extract that logic to a custom Hook. Custom Hooks start with `use` followed by the hook name. 
 
@@ -67,21 +67,23 @@
 
 
 
-### Usage : 
-This custom hook can be used in many scenarios. I have used it to store Favourite Restaurants. 
+  ### Usage : 
+  This custom hook can be used in many scenarios. I have used it to store Favourite Restaurants. 
 
-1. Create a local storage key as "fav" and store its value in favRestaurants. This must be done in Body (Parent component). Initially, there will be no such key in local storage, so a new key fav is created and [] is set as its value.
+  1. Create a local storage key as "fav" and store its value in favRestaurants. This must be done in Body (Parent component). Initially, there will be no such key in local storage, so a new key fav is created and [] is set as its value.
 
-2.When user clicks on heart button in restaurant card, that restaurant is marked as favourite and added to fav array in local storage using `setFavRestaurants`.
+  2.When user clicks on heart button in restaurant card, that restaurant is marked as favourite and added to fav array in local storage using `setFavRestaurants`.
 
-3. If user clicks on one more restaurant card, then it must be adding to a `new array` along with already available value. State must be updated only through this way. Used `spread operator` to do this. 
+  3. If user clicks on one more restaurant card, then it must be adding to a `new array` along with already available value. State must be updated only through this way. Used `spread operator` to do this. 
 
-4. If user unmarks the favourite, then that value object is removed from the array. Used `filter` function to do this because it returns new array. 
+  4. If user unmarks the favourite, then that value object is removed from the array. Used `filter` function to do this because it returns new array. 
 
-5. Show all the favourite restaurants, when Show favourites button in clicked and when its clicked again show all restaurants.
+  5. Show all the favourite restaurants, when Show favourites button in clicked and when its clicked again show all restaurants.
 
 
  
-2. Try out lazy and suspense
+### 2. Try out lazy and suspense
 
-3. Make your code clean.
+Loading About & Instamart components on demand, that is when that component is called .
+
+### 3. Make your code clean.
