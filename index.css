@@ -148,7 +148,7 @@ a {
   height: 30px;
   color : #001d3d;
   border-radius: 7px;
-  border: #ffc300;
+  border: 1px solid #ffc300;
   outline: none;
   font-size: 16px;
   flex-basis : 90px;

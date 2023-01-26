@@ -104,7 +104,6 @@ return (
     { allRestaurants?.length === 0 ? (<Shimmer />) : 
     <div className="restaurant-container">
       {filteredRestaurants.map((restaurant) => {
-        console.log(restaurant);
         return ( <Link
           className="link-styles" to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
           <RestaurantCard props={restaurant} key={restaurant.data.id} setRestaurants={addFavourite} />
