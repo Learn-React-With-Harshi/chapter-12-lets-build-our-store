@@ -1,4 +1,8 @@
 // with options
 {
-  "plugins": [  ]
+  "plugins": [ [
+    "transform-remove-console",
+    { "exclude": [ "error", "warn" , "log"] }
+    ] 
+  ]
 }
