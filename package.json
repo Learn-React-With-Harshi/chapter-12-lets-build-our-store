@@ -1,5 +1,5 @@
 {
-  "name": "chapter-09-optimizing-our-app",
+  "name": "chapter-10-what-is-seen-is-sold",
   "version": "1.0.0",
   "description": "Documenting my learning journey of [Namaste React Live Course](https://learn.namastedev.com/) conducted by Akshay Saini",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app.git"
+    "url": "git+https://github.com/Learn-React-With-Harshi/chapter-10-what-is-seen-is-sold.git"
   },
   "author": "Harshitha SV",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app/issues"
+    "url": "https://github.com/Learn-React-With-Harshi/chapter-10-what-is-seen-is-sold/issues"
   },
-  "homepage": "https://github.com/Learn-React-With-Harshi/chapter-09-optimizing-our-app#readme",
+  "homepage": "https://github.com/Learn-React-With-Harshi/chapter-10-what-is-seen-is-sold#readme",
   "dependencies": {
     "formik": "^2.2.9",
     "react": "^18.2.0",
