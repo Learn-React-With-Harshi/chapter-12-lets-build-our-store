@@ -1,4 +1,4 @@
-import React, {lazy, Suspense} from "react";
+import React, {lazy, Suspense, useEffect} from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -26,6 +26,13 @@ const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
   const location = useLocation();
   console.log(location);
+  useEffect(()=>{
+    window.onbeforeunload = function() {
+      window.localStorage.removeItem("fav");
+      return '';
+    };  
+  },[]);
+  
   return (
     <>
       <MainHeader.Header {...location.state} />
