@@ -45,7 +45,6 @@ const Login = () => {
         return errors;
       }}
       onSubmit={async (values, { setSubmitting }) => {
-        
         setSubmitting(true);
         const response = await loginUser(values);
         console.log("OnSubmit", response);

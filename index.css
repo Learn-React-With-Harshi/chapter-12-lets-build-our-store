@@ -41,6 +41,7 @@ a {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   height: 70px;
   background: #fff;
+  z-index: 999;
 }
 .nav-items > ul{ 
   max-width : 500px;
@@ -705,11 +706,20 @@ a {
     height: 20px;
     font-size: 12px ;
   }
+
+  .features-container {
+    flex-direction: column;
+  }
+
   .search-input {
     flex-basis: 300px;
     font-size: 12px;
   }
   .search-btn {
+    flex-basis: 50px;
+    font-size: 12px;
+  }
+  .fav-btn {
     flex-basis: 50px;
     font-size: 12px;
   }
