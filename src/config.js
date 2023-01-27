@@ -1,4 +1,6 @@
 //Config Driven UI - Mock Data from API
+
+/* CDN for Restaurant & Menu items Images  */
 export const RES_IMG_CDN  = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 export const ITEM_IMG_CDN  = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
 
@@ -27,8 +29,7 @@ export const LINKEDIN_LINK= "https://www.linkedin.com/in/harshitha-sv/" ;
 export const GMAIL_LINK  = "mailto:solaiharshitha0@gmail.com";
 
 
-
-
+/* Mock Data */
 export const restaurantList = [
   {
     type: "restaurant",

@@ -32,7 +32,7 @@
   
   Let's create state `value` with initialState as [] if `key` is not present in local storage. If `key` is already present in local storage, then get that value and set that as initial state. 
 
-  ```
+  ```javascript
   const [value, setValue] = useState(() => {
     const value_string = window.localStorage.getItem(key);
     return JSON.parse(value_string) || []; // default value is [] if there is no such key 
@@ -41,13 +41,13 @@
 
   Note : All the values are stored in local storage as `strings`. So, we have to convert it to json object before use using JSON.parse()
 
-  ```
+  ```javascript
   return [value, setValue]
   ```
 
   Creation is done. Return the value and function to the code. Whenever we need to use this value in code, use the `value` name with which it is created. 
 
-  ```
+  ```javascript
   For example : [favRestaurants, setFavRestaurants] =  useState("fav")
 
   console.log(favRestaurants); -> This will get the `value` stored in local storage for the key `fav`
@@ -56,7 +56,7 @@
   <ans>Updating the value for the given key </ans>
   Use `setValue` function (In example : setFavRestaurants()) to update the state `value` in the code. Now, this updated `value` must be put into local storage as well. Use `useEffect` hook to set the value of local storage for the given key. This must be done for every change in key or value. 
 
-  ```
+  ```javascript
   useEffect(() => {
     window.localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
