@@ -54,13 +54,14 @@ Since I created the previous versions with plain native css (no framework), it w
 <ans>Done :</ans>
 
 1. Web version of UI 
-2. Tries to bring the same look as earlier
-3. Just replaced the previous styles with utility classes of tailwind (not so efficient for now)
+2. Tried to bring the same look as earlier
+3. Replaced the previous styles with utility classes of tailwind (not so efficient for now)
+4. Tried to reuse few styles for button, card, container, etc
 
 <ans>Work in progress : </ans>
-1. Responsiveness
-2. Reuable classes
-3. Reduce the arbitrary values 
+1. Responsiveness for mobile 
+2. More Reuable classes
+
 
 
 
