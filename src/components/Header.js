@@ -5,13 +5,13 @@ import useOnline from '../utils/useOnline';
 
 export const ImgComponent = ({item, itemname}) => {
   return(
-    <a href="/"> <img className={itemname} alt={itemname} src= {item} /> </a>
+    <a href="/"> <img className="h-20 p-2" alt={itemname} src= {item} /> </a>
     )
 }
 
 export const Title = () => {
   return(
-    <ImgComponent item={logo} itemname={"logo"}/>
+    <ImgComponent item={logo} itemname={"logo ml-2.5 w-16"}/>
   )
 };
 
@@ -33,12 +33,12 @@ export const NavComponent = (user) => {
 
   
   return (
-    <div className="nav-items">
-    <ul>
-        <li> <Link to="/"><button className="nav-btn"> Home</button></Link></li>
-        <li> <Link to="/about"><button className="nav-btn"> About</button></Link> </li>
-        <li> <Link to="/instamart"><button className="nav-btn"> Instamart</button></Link></li>
-        <li> <button className="nav-btn" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout" : "Login" }  <span className={isOnline ? "online" : "offline" }>●</span></button></li>
+    <div className="">
+    <ul className="flex max-w-2xl items-center justify-between mt-2.5 mr-2.5">
+        <li className="p-2.5 text-blue-dark"> <Link to="/"><button className="nav-btn w-20 h-8 rounded-md basis-16 bg-white border-blue-dark outline-none hover:bg-yellow text-base"> Home</button></Link></li>
+        <li className="p-2.5 text-blue-dark"> <Link to="/about"><button className="nav-btn w-20 h-8 rounded-md basis-16 bg-white border-blue-dark outline-none hover:bg-yellow text-base" > About</button></Link> </li>
+        <li className="p-2.5 text-blue-dark"> <Link to="/instamart"><button className="nav-btn w-20 h-8 rounded-md basis-16 bg-white border-blue-dark outline-none hover:bg-yellow text-base"> Instamart</button></Link></li>
+        <li className="p-2.5 text-blue-dark"> <button className="nav-btn w-20 h-8 rounded-md basis-16 bg-white border-blue-dark outline-none hover:bg-yellow text-base" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout" : "Login" }  <span className={isOnline ? "text-green" : "text-red" }>●</span></button></li>
       </ul> 
     </div>
   );
@@ -46,7 +46,7 @@ export const NavComponent = (user) => {
 
 export const Header = (state) => {
   return (
-    <div className="header">
+    <div className="flex justify-between bg-white shadow fixed top-0 left-0 w-full h-20 z-50">
       <Title />
       <NavComponent {...state} />
     </div>

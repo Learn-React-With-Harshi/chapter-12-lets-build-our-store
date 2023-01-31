@@ -29,7 +29,7 @@ const Login = () => {
   }
 
   return (
-  <div className="login-container">
+  <div className="login-container mt-[100px] min-h-9 text-center flex">
   
     <Formik
       initialValues={{ email: '', password: '' }}
@@ -53,25 +53,25 @@ const Login = () => {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className="login-form">
-          <span className='login-msg'>{state.msg ? state.msg : "Welcome to Insta Food. "} Please Login!</span>
-
-          <img className="logo" alt="logo" src= {logo} />
+        <Form className="login-form border border-gray shadow basis-[500px] h-[400px] m-auto flex items-center justify-center flex-col gap-3">
+          <span className='login-msg text-blue-dark text-lg font-extrabold'>{state.msg ? state.msg : "Welcome to Insta Food. "} Please Login!</span>
+          <img className="logo w-[70px] ml-2.5" alt="logo" src= {logo} />
           {isSubmitting && <div>Loading...</div>}
-          <div className="email">
-            <label htmlFor="email" className="email-label">Email</label>
-            <Field type="email" name="email" id="email" />
-            <ErrorMessage name="email" component="div"  id="pwd" />
+          <div className="email flex justify-center p-2.5">
+            <label htmlFor="email" className="email-label p-2.5 w-[100px]">Email</label>
+            <Field type="email" name="email" id="email" className="outline-none text-sm h-10 w-[200px] rounded-md bg-gray" 
+            />
           </div>
+          <ErrorMessage name="email" component="div"  id="pwd" className="text-red text-xs"/>
 
-          <div className="pwd">
-            <label htmlFor="password" className="pwd-label">Password</label>
-            <Field type="password" name="password" id="pwd"/>
-            <ErrorMessage name="password" component="div" />
+          <div className="pwd flex justify-center p-2.5">
+            <label htmlFor="password" className="pwd-label p-2.5 w-[100px]">Password</label>
+            <Field type="password" name="password" id="pwd" className="outline-none text-sm h-10 w-[200px] rounded-md bg-gray" />
           </div>
+          <ErrorMessage name="password" component="div" className="text-red text-xs"/>
 
           <div className='submit'>
-            <button className="submit-btn" type="submit" disabled={isSubmitting}>
+            <button className="submit-btn bg-yellow text-blue-dark w-[80px] h-[30px]  rounded-md border-yellow outline-none text-base" type="submit" disabled={isSubmitting}>
               Submit
             </button>
           </div>

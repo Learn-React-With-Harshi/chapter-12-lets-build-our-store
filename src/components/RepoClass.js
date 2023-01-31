@@ -24,10 +24,10 @@ class Repo extends Component {
     const repo = this.props;
     return (
       
-      <div className="repo-card">
-        <a target="_blank" href={repo.html_url}><h3 className="repo-title">{repo.name}</h3></a>
-        <p className="repo-bio">{repo.description}</p>
-        { repo.name !== 'table-of-contents' && <a target="_blank" href={repo.homepage}><h4 className="repo-demo">Show live demo</h4></a> }
+      <div className="repo-card flex flex-col gap-5 p-5 border border-gray">
+        <a target="_blank" href={repo.html_url}><h3 className="repo-title text-xl text-title font-bold hover:text-blue hover:underline hover:decoration-blue">{repo.name}</h3></a>
+        <p className="repo-bio text-base text-bio">{repo.description}</p>
+        { repo.name !== 'table-of-contents' && <a target="_blank" href={repo.homepage}><h4 className="repo-demo text-base text-blue font-semibold">Show live demo</h4></a> }
       </div>
   )}
 }

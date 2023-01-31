@@ -18,19 +18,19 @@ export const RestaurantCard = ({ props, setRestaurants}) => {
   }
 
   return (
-    <div className="card">
-      <div className="card-img-container">
-        <div className="heart-button">
-          <span className={isFavourite? "mark-fav-icon" : ""} 
+    <div className="card basis-60 p-3 mb-3 hover:shadow">
+      <div className="card-img-container relative w-full ">
+        <div className="heart-button absolute z-20 text-gray-light text-2xl text-right cursor-pointer rounded-3xl w-[99%] ">
+          <span className={isFavourite? "mark-fav-icon text-red" : ""} 
           onClick={(e) => {markFavourite(e)}} >&#x2764;</span>
         </div>
-        <img className="card-img" src={ RES_IMG_CDN  + cloudinaryImageId } alt={name}/>      
+        <img className="card-img w-full" src={ RES_IMG_CDN  + cloudinaryImageId } alt={name}/>      
       </div>
       <div className="card-body">
-        <h6 className="card-title">{name}</h6>
-        <p className="card-tags">{cuisines.join(", ")}</p>
-        <div className="card-details">
-          <div className="rating" style={buttonStyle}>
+        <h6 className="card-title text-base font-bold w-3/5 tracking-normal">{name}</h6>
+        <p className="card-tags text-gray-dark text-xs w-4/5">{cuisines.join(", ")}</p>
+        <div className="card-details flex mt-4 justify-between items-center text-xs pb-2.5 text-gray-details font-semibold">
+          <div className="rating flex items-center h-5 w-11 gap-1 py-0 px-1" style={buttonStyle}>
             <AiFillStar /><span>{avgRating}</span>
           </div>
           <div>•</div>

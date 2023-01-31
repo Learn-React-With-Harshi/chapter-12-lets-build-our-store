@@ -82,30 +82,30 @@ if (!allRestaurants) {
   return null;
 }
 return (
-    <div className= "container">
-      <div className="features-container">
-        <div className="search-container"> 
+    <div className= "container mt-24 min-h-screen min-w-screen">
+      <div className="features-container flex justify-start">
+        <div className="search-container flex justify-evenly min-w-[500px] h-[100px] items-center m-auto"> 
           <input type="text" placeholder=" Search for restaurant" value={searchText}
-            className="search-input" key="input-text" onChange = {(e) => setSearchText(e.target.value)}/>
-          <button className="search-btn" 
+            className="search-input outline-none text-base p-2 basis-96 h-8 rounded-md ring-1 ring-gray  bg-gray sm:text-sm sm:basis-[300px]" key="input-text" onChange = {(e) => setSearchText(e.target.value)}/>
+          <button className="search-btn bg-yellow h-8 text-blue-dark basis-16 rounded-md outline-none text-base border-yellow sm:text-sm sm:basis-[50px]" 
             onClick={searchData(searchText, allRestaurants)}> Search </button>
         </div>
-        <div className="favourite-container">
-            <button className={isFavourite? "fav-btn fav-btn-active": "fav-btn" } 
+        <div className="favourite-container flex justify-end h-[100px] items-center m-auto sm:flex-col ">
+            <button className={isFavourite? "fav-btn fav-btn-active bg-yellow h-8 text-blue-dark rounded-md border border-yellow outline-none text-base px-2": "fav-btn bg-white h-8 text-blue-dark rounded-md border-yellow border outline-none text-base px-2" } 
             onClick={()=> {showFavouriteRestaurants()}}>Favourites </button>
         </div>
       </div>
     { errorMsg && 
-      <div className="error-container" id="error">
-        <span className="error-msg" id="error-msg">{errorMsg}</span>
+      <div className="error-container h-14 m-auto text-center" id="error">
+        <span className="error-msg w-14 h-8 text-sm text-red" id="error-msg">{errorMsg}</span>
       </div> 
     }
     
     { allRestaurants?.length === 0 ? (<Shimmer />) : 
-    <div className="restaurant-container">
+    <div className="restaurant-container flex flex-wrap gap-5 justify-evenly">
       {filteredRestaurants.map((restaurant) => {
         return ( <Link
-          className="link-styles" to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
+          className="link-styles basis-60 p-3 mb-3" to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
           <RestaurantCard props={restaurant} key={restaurant.data.id} setRestaurants={addFavourite} />
         </Link>
         )
