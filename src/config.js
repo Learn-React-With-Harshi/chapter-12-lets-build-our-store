@@ -32,7 +32,7 @@ export const GITHUB_LINK = "https://github.com/HarshithaSolai";
 export const LINKEDIN_LINK = "https://www.linkedin.com/in/harshitha-sv/";
 export const GMAIL_LINK = "mailto:solaiharshitha0@gmail.com";
 
-/* Mock Data */
+/* Mock Data for Restaurant Card */
 export const restaurantList = {
   statusCode: 0,
   data: {
@@ -2395,6 +2395,7 @@ export const restaurantList = {
   csrfToken: "Ycy1XEMJeOly-QVWrgiax_eYfBalhoYNiudxJM9s",
 };
 
+/* Mock Data for Restaurant Menu */
 export const restaurantMenu = {
   statusCode: 0,
   data: {
