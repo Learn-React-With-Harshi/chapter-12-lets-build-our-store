@@ -88,7 +88,7 @@ return (
       <div className="flex justify-start">
         <div className="flex justify-evenly min-w-[500px] h-[100px] items-center m-auto"> 
           <input type="text" placeholder=" Search for restaurant" value={searchText}
-            className="outline-none text-base p-[5px] basis-[350px] h-[30px] rounded-md ring-1 ring-gray bg-gray sm:text-sm sm:basis-[300px]" key="input-text" onChange = {(e) => setSearchText(e.target.value)}/>
+            className="outline-none text-base p-[5px] basis-[350px] h-[30px] rounded-md ring-1 ring-gray bg-gray" key="input-text" onChange = {(e) => setSearchText(e.target.value)}/>
           <button className="btn btn--primary basis-[60px]" 
             onClick={searchData(searchText, allRestaurants)}> Search </button>
         </div>
