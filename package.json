@@ -1,5 +1,5 @@
 {
-  "name": "chapter-10-what-is-seen-is-sold",
+  "name": "chapter-11-data-is-the-new-oil",
   "version": "1.0.0",
   "description": "Documenting my learning journey of [Namaste React Live Course](https://learn.namastedev.com/) conducted by Akshay Saini",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Learn-React-With-Harshi/chapter-10-what-is-seen-is-sold.git"
+    "url": "git+https://github.com/Learn-React-With-Harshi/chapter-11-data-is-the-new-oil.git"
   },
   "author": "Harshitha SV",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Learn-React-With-Harshi/chapter-10-what-is-seen-is-sold/issues"
+    "url": "https://github.com/Learn-React-With-Harshi/chapter-11-data-is-the-new-oil/issues"
   },
-  "homepage": "https://github.com/Learn-React-With-Harshi/chapter-10-what-is-seen-is-sold#readme",
+  "homepage": "https://github.com/Learn-React-With-Harshi/chapter-11-data-is-the-new-oil#readme",
   "dependencies": {
     "formik": "^2.2.9",
     "react": "^18.2.0",
