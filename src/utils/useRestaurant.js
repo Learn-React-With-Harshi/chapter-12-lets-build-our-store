@@ -11,10 +11,11 @@ const useRestaurant = (resId) => {
 
   const getRestaurantInfo = async () => {
     try {
-      //const response = await fetch(GET_RESTAURANT_MENU + resId);
-      //const res_data = await response.json();
-
-      const res_data =  restaurantMenu;
+      /* Live Data */
+      const response = await fetch(GET_RESTAURANT_MENU + resId);
+      const res_data = await response.json();
+      /* Mock Data */
+      //const res_data =  restaurantMenu;
       setRestaurant(res_data.data)
     } catch (error) {
       console.log(error);

@@ -24,11 +24,11 @@ const Body = () => {
   const getRestaurants = async () => {
     try {
       /* Live Data */
-      //const response = await fetch(GET_RESTAURANTS_LIST);
-      //const res_data = await response.json();
+      const response = await fetch(GET_RESTAURANTS_LIST);
+      const res_data = await response.json();
       
       /* Mock Data */ 
-      const res_data = restaurantList;
+      //const res_data = restaurantList;
 
       setAllRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
