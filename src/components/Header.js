@@ -5,13 +5,13 @@ import useOnline from '../utils/useOnline';
 
 export const ImgComponent = ({item, itemname}) => {
   return(
-    <a href="/"> <img className="h-20 p-2" alt={itemname} src= {item} /> </a>
+    <a href="/"> <img className={itemname} alt={itemname} src= {item} /> </a>
     )
 }
 
 export const Title = () => {
   return(
-    <ImgComponent item={logo} itemname={"logo ml-2.5 w-16"}/>
+    <ImgComponent item={logo} itemname={"logo ml-2.5 w-[70px]"}/>
   )
 };
 
@@ -46,7 +46,7 @@ export const NavComponent = (user) => {
 
 export const Header = (state) => {
   return (
-    <div className="flex justify-between bg-white shadow fixed top-0 left-0 w-full h-20 z-50">
+    <div className="flex justify-between bg-white shadow fixed top-0 left-0 w-full h-[70px] z-50">
       <Title />
       <NavComponent {...state} />
     </div>

@@ -18,9 +18,9 @@ export const RestaurantCard = ({ props, setRestaurants}) => {
   }
 
   return (
-    <div className="card basis-60 p-3 mb-3 hover:shadow">
+    <div className="card basis-[250px] p-2.5 mb-2.5 hover:shadow">
       <div className="card-img-container relative w-full ">
-        <div className="heart-button absolute z-20 text-gray-light text-2xl text-right cursor-pointer rounded-3xl w-[99%] ">
+        <div className="heart-button absolute z-[2] text-gray-light text-[25px] text-right cursor-pointer rounded-[10rem] w-[99%] ">
           <span className={isFavourite? "mark-fav-icon text-red" : ""} 
           onClick={(e) => {markFavourite(e)}} >&#x2764;</span>
         </div>

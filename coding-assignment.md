@@ -44,4 +44,23 @@ Since we are going to use tailwind css, we can remove all the existing css that 
 
 ### 5. Start small, don't panic 
 
-I initally had lot of hesitation to use tailwind css. What helped me going was to s
+I initally had lot of hesitation to use tailwind css. What helped me going was to start with one component at a time. Started in the order of Component hierarchy -
+  AppLayout -> Header (its children) -> Body (its children) -> Footer -> Shimmer -> (its children) -> About (its children) -> Login 
+
+### 6. What helped ? 
+Since I created the previous versions with plain native css (no framework), it was easy to remove and replace it with tailwind css framework.
+
+
+<ans>Done :</ans>
+
+1. Web version of UI 
+2. Tries to bring the same look as earlier
+3. Just replaced the previous styles with utility classes of tailwind (not so efficient for now)
+
+<ans>Work in progress : </ans>
+1. Responsiveness
+2. Reuable classes
+3. Reduce the arbitrary values 
+
+
+
