@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+  @apply mt-24 min-h-screen min-w-fit;
+}
+
+.card-container {
+  @apply px-2.5 py-5 m-4 rounded-md overflow-hidden shadow bg-white;
+}
+.card-container-title {
+  @apply text-3xl leading-4 justify-center text-title text-center font-bold;
+}
+.btn {
+  @apply h-[30px] text-blue-dark rounded-md outline-none border border-yellow text-base;
+}
+
+.btn--primary {
+  @apply bg-yellow ;
+}
+
+.btn--secondary {
+  @apply bg-white;
+}
+
+.nav--btn {
+  @apply w-20 h-8 rounded-md basis-16 bg-white  text-blue-dark outline-none hover:bg-yellow text-base;
+}
+
+.icon--i {
+  @apply text-white rounded-[2.6rem] flex text-[1.4rem] w-[2.6rem] h-[2.6rem] leading-[3rem] text-center select-none mt-0 mr-[5px] mb-2.5;
+}
+
+.shimmer-w60 {
+  @apply w-3/5 mt-2.5 h-[15px] bg-bio;
+}
+
+.shimmer-w40 {
+  @apply w-2/5 mt-2.5 h-[15px] bg-bio;
+}
+
+.shimmer-w20 {
+  @apply w-1/5 mt-1 h-[15px] bg-bio;
+}
+
+.error-text {
+  @apply text-red text-xs;
+}

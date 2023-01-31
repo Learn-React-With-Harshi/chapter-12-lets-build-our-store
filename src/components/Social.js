@@ -26,9 +26,9 @@ class Social extends React.Component {
     return (
       
           <div className="social-media-div text-[2em] text-center w-full flex items-center justify-center">
-            <a href={GITHUB_LINK} className="icon-button mb-2.5 " target="_blank"><i className="bg-github text-white rounded-[2.6rem] flex text-[1.4rem] w-[2.6rem] h-[2.6rem] leading-[3rem]  select-none mt-0 mr-[5px] mb-2.5" ><SiGithub className='m-auto'/></i></a> 
-            <a href={LINKEDIN_LINK} className="icon-button mb-2.5 " target="_blank"><i className="bg-linkedin text-white rounded-[2.6rem]  flex text-[1.4rem] w-[2.6rem] h-[2.6rem] leading-[3rem] text-center select-none  mt-0 mr-[5px] mb-2.5"><SiLinkedin className='m-auto'/></i></a>
-            <a href={GMAIL_LINK} className="icon-button mb-2.5 "><i className="bg-google text-white rounded-[2.6rem]  flex text-[1.4rem] w-[2.6rem] h-[2.6rem] leading-[3rem] text-center select-none  mt-0 mr-[5px] mb-2.5" ><SiGoogle className='m-auto' /></i> </a>
+            <a href={GITHUB_LINK} className="mb-2.5" target="_blank"><i className="bg-github icon--i" ><SiGithub className='m-auto'/></i></a> 
+            <a href={LINKEDIN_LINK} className="mb-2.5" target="_blank"><i className="bg-linkedin icon--i"><SiLinkedin className='m-auto'/></i></a>
+            <a href={GMAIL_LINK} className="mb-2.5"><i className="bg-google icon--i" ><SiGoogle className='m-auto' /></i> </a>
           </div>
         
     )

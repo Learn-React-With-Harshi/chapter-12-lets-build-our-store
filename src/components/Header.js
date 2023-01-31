@@ -35,10 +35,12 @@ export const NavComponent = (user) => {
   return (
     <div className="">
     <ul className="flex max-w-2xl items-center justify-between mt-2.5 mr-2.5">
-        <li className="p-2.5 text-blue-dark"> <Link to="/"><button className="nav-btn w-20 h-8 rounded-md basis-16 bg-white border-blue-dark outline-none hover:bg-yellow text-base"> Home</button></Link></li>
-        <li className="p-2.5 text-blue-dark"> <Link to="/about"><button className="nav-btn w-20 h-8 rounded-md basis-16 bg-white border-blue-dark outline-none hover:bg-yellow text-base" > About</button></Link> </li>
-        <li className="p-2.5 text-blue-dark"> <Link to="/instamart"><button className="nav-btn w-20 h-8 rounded-md basis-16 bg-white border-blue-dark outline-none hover:bg-yellow text-base"> Instamart</button></Link></li>
-        <li className="p-2.5 text-blue-dark"> <button className="nav-btn w-20 h-8 rounded-md basis-16 bg-white border-blue-dark outline-none hover:bg-yellow text-base" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout" : "Login" }  <span className={isOnline ? "text-green" : "text-red" }>●</span></button></li>
+        <li className="p-2.5"> <Link to="/"><button className="nav--btn "> Home</button></Link></li>
+        <li className="p-2.5"> <Link to="/about"><button className="nav--btn" > About</button></Link> </li>
+        <li className="p-2.5"> <Link to="/instamart"><button className="nav--btn"> Instamart</button></Link></li>
+        <li className="p-2.5"> <button className="nav--btn" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout" : "Login" }  
+          <span className={isOnline ? "text-green" : "text-red" }>●</span></button>
+        </li>
       </ul> 
     </div>
   );

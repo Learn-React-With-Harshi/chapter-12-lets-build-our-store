@@ -62,16 +62,16 @@ const Login = () => {
             <Field type="email" name="email" id="email" className="outline-none text-sm h-10 w-[200px] rounded-md bg-gray" 
             />
           </div>
-          <ErrorMessage name="email" component="div"  id="pwd" className="text-red text-xs"/>
+          <ErrorMessage name="email" component="div"  id="pwd" className="error-text"/>
 
           <div className="pwd flex justify-center p-2.5">
             <label htmlFor="password" className="pwd-label p-2.5 w-[100px]">Password</label>
             <Field type="password" name="password" id="pwd" className="outline-none text-sm h-10 w-[200px] rounded-md bg-gray" />
           </div>
-          <ErrorMessage name="password" component="div" className="text-red text-xs"/>
+          <ErrorMessage name="password" component="div" className="error-text"/>
 
           <div className='submit'>
-            <button className="submit-btn bg-yellow text-blue-dark w-[80px] h-[30px]  rounded-md border-yellow outline-none text-base" type="submit" disabled={isSubmitting}>
+            <button className="btn btn--primary w-[80px]" type="submit" disabled={isSubmitting}>
               Submit
             </button>
           </div>

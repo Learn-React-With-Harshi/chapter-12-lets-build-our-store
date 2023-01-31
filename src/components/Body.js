@@ -49,7 +49,9 @@ const Body = () => {
   }
 
   if(!isOnline) {
-    return <div className="container mt-24 min-h-screen min-w-screen"><h1 className="font-bold text-red text-3xl text-center">Offline, please check your internet connection </h1></div>
+    return (<div className="container">
+      <h1 className="font-bold text-red text-3xl text-center">Offline, please check your internet connection </h1>
+      </div>)
   } 
 
   const addFavourite = (props) => {
@@ -82,30 +84,30 @@ if (!allRestaurants) {
   return null;
 }
 return (
-    <div className= "container mt-24 min-h-screen min-w-screen">
-      <div className="features-container flex justify-start">
-        <div className="search-container flex justify-evenly min-w-[500px] h-[100px] items-center m-auto"> 
+    <div className= "container">
+      <div className="flex justify-start">
+        <div className="flex justify-evenly min-w-[500px] h-[100px] items-center m-auto"> 
           <input type="text" placeholder=" Search for restaurant" value={searchText}
-            className="search-input outline-none text-base p-[5px] basis-[350px] h-[30px] rounded-md ring-1 ring-gray bg-gray sm:text-sm sm:basis-[300px]" key="input-text" onChange = {(e) => setSearchText(e.target.value)}/>
-          <button className="search-btn bg-yellow h-[30px] text-blue-dark basis-[60px] rounded-md outline-none text-base border-yellow" 
+            className="outline-none text-base p-[5px] basis-[350px] h-[30px] rounded-md ring-1 ring-gray bg-gray sm:text-sm sm:basis-[300px]" key="input-text" onChange = {(e) => setSearchText(e.target.value)}/>
+          <button className="btn btn--primary basis-[60px]" 
             onClick={searchData(searchText, allRestaurants)}> Search </button>
         </div>
-        <div className="favourite-container flex justify-end h-[100px] items-center m-auto">
-            <button className={isFavourite? "fav-btn fav-btn-active bg-yellow h-[30px] text-blue-dark rounded-md border border-yellow outline-none text-base px-[5px]": "fav-btn bg-white h-[30px] text-blue-dark rounded-md border-yellow border outline-none text-base px-[5px]" } 
+        <div className="flex justify-end h-[100px] items-center m-auto">
+            <button className={isFavourite? "btn btn--primary px-[5px]": "btn btn--secondary px-[5px]" } 
             onClick={()=> {showFavouriteRestaurants()}}>Favourites </button>
         </div>
       </div>
     { errorMsg && 
-      <div className="error-container h-14 m-auto text-center" id="error">
-        <span className="error-msg w-14 h-8 text-sm text-red" id="error-msg">{errorMsg}</span>
+      <div className="h-14 m-auto text-center" id="error">
+        <span className="error-text w-14 h-8 " id="error-msg">{errorMsg}</span>
       </div> 
     }
     
     { allRestaurants?.length === 0 ? (<Shimmer />) : 
-    <div className="restaurant-container flex flex-wrap gap-5 justify-center">
+    <div className="flex flex-wrap gap-5 justify-center">
       {filteredRestaurants.map((restaurant) => {
         return ( <Link
-          className="link-styles basis-[250px] p-2.5 mb-2.5" to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
+          className="basis-[250px] p-2.5 mb-2.5" to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
           <RestaurantCard props={restaurant} key={restaurant.data.id} setRestaurants={addFavourite} />
         </Link>
         )

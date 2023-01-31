@@ -35,12 +35,12 @@ class Profile extends React.Component {
     const {userInfo} = this.state;
     console.log("Profile Component - render");
     return (
-      <div className="profile-card flex flex-col justify-center items-center mt-4 gap-5"> 
+      <div className="flex flex-col justify-center items-center mt-4 gap-5"> 
         <div>
-          <img className="profile-img rounded-full w-[150px] h-[150px] border-none align-middle" src={userInfo.avatar_url} alt={userInfo.name} />
+          <img className="rounded-full w-[150px] h-[150px] border-none align-middle" src={userInfo.avatar_url} alt={userInfo.name} />
         </div>
-        <div className="profile-details">
-          <p className="profile-bio text-base text-bio pt-5 mt-0 mb-4">{userInfo.bio}</p>
+        <div className="">
+          <p className="text-base text-bio pt-5 mt-0 mb-4">{userInfo.bio}</p>
           <Social />
         </div>
       </div>

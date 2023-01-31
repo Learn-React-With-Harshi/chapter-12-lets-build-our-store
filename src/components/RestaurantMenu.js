@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <MenuShimmer />
     ) : (
-    <div className="restaurant-menu mt-24 min-h-screen">
+    <div className="container">
       <div className="restaurant-summary flex basis-full h-60 justify-evenly items-center bg-blue-dark text-gray p-8">
         <img className="restaurant-img w-[254px] h-[165px]" src={ RES_IMG_CDN  + restaurant?.cloudinaryImageId } alt={restaurant?.name}/>
         <div className="restaurant-summary-details flex flex-col basis-[540px] m-5 ">
@@ -30,24 +30,24 @@ const RestaurantMenu = () => {
         </div>
       </div>
 
-      <div className="restaurant-menu-content flex justify-center">
-        <div className="menu-items-container mt-7 w-[848px]">
-          <div className="menu-title-wrap p-5">
-            <h3 className="menu-title font-bold text-lg">Recommended</h3>
-            <p className="menu-count mt-3.5 w-3/5 text-gray-desc text-sm">{Object.keys(restaurant?.menu?.items).length} ITEMS</p>
+      <div className="flex justify-center">
+        <div className=" mt-7 w-[848px]">
+          <div className="p-5">
+            <h3 className="font-bold text-lg">Recommended</h3>
+            <p className="mt-3.5 w-3/5 text-gray-desc text-sm">{Object.keys(restaurant?.menu?.items).length} ITEMS</p>
           </div>
-          <div className="menu-items-list flex flex-col justify-evenly">
+          <div className="flex flex-col justify-evenly">
             { Object.values(restaurant?.menu?.items).map( item => 
-            <div className="menu-item flex justify-between basis-[848px] max-h-[250px] p-5 border-b border-light-gray" key={item?.id}>
-              <div className="menu-item-details flex flex-col basis-[400px]">
-                <h3 className="item-title font-bold text-lg w-3/5">{item?.name}</h3>
-                <p className="item-cost mt-1 text-base font-normal">{(item?.price > 0) ?
+            <div className="flex justify-between basis-[848px] max-h-[250px] p-5 border-b border-gray" key={item?.id}>
+              <div className="flex flex-col basis-[400px]">
+                <h3 className="font-bold text-lg w-3/5">{item?.name}</h3>
+                <p className="mt-1 text-base font-normal">{(item?.price > 0) ?
                   new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR'}).format(item?.price/100 ): " " } </p>
-                <p className="item-desc mt-3.5 leading-5 text-gray-desc w-4/5 text-base overflow-hidden">{item?.description}</p>
+                <p className="mt-3.5 leading-5 text-gray-desc w-4/5 text-base overflow-hidden ">{item?.description}</p>
               </div>
-              <div className="menu-img-wrapper flex flex-col justify-center items-center w-[118px] h-[150px]">
-                { item?.cloudinaryImageId  && <img className="menu-item-img w-[118px] h-[96px]" src={ ITEM_IMG_CDN  + item?.cloudinaryImageId } alt={item?.name}/> }
-                <button className="add-btn bg-yellow text-blue-dark w-[94px] h-[34px] outline-none border-yellow mt-2.5 rounded"> ADD +</button>
+              <div className="flex flex-col justify-center items-center w-[118px] h-[150px]">
+                { item?.cloudinaryImageId  && <img className="w-[118px] h-[96px]" src={ ITEM_IMG_CDN  + item?.cloudinaryImageId } alt={item?.name}/> }
+                <button className="btn btn--primary w-[118px] h-[34px] mt-2.5"> ADD +</button>
               </div>
             </div>
             )}
