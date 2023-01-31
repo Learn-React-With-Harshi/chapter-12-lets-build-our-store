@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { filterData } from '../utils/helper';
 import useOnline from "../utils/useOnline";
 import useLocalStorage from '../utils/useLocalStorage';
-
+import { restaurantList } from '../config'; /* Mock Data for testing in mobile*/
 
 const Body = () => {
   const [searchText, setSearchText] = useState();
@@ -23,9 +23,13 @@ const Body = () => {
 
   const getRestaurants = async () => {
     try {
-      const response = await fetch(GET_RESTAURANTS_LIST);
-      const res_data = await response.json();
-    
+      /* Live Data */
+      //const response = await fetch(GET_RESTAURANTS_LIST);
+      //const res_data = await response.json();
+      
+      /* Mock Data */ 
+      const res_data = restaurantList;
+
       setAllRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
     } catch (error) {

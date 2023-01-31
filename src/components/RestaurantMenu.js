@@ -4,6 +4,7 @@ import { MenuShimmer } from "./Shimmer";
 import {AiFillStar} from 'react-icons/ai';
 import useRestaurant from "../utils/useRestaurant";
 
+
 const RestaurantMenu = () => {
   const { resId } = useParams(); /* Read dynamic URL params */
 
