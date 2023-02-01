@@ -13,7 +13,6 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Login from "./components/Login";
 import { useLocation } from "react-router-dom";
 import Shimmer from "./components/Shimmer";
-
 /* import Instamart from "./components/Instamart";  
 
 On Demand loading
@@ -22,6 +21,8 @@ On Demand loading
 
 const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
+const Help = lazy(() => import("./components/Help"));
+
 
 const AppLayout = () => {
   const location = useLocation();
@@ -66,9 +67,14 @@ const appRouter = createBrowserRouter([
       {
         path     : "/restaurant/:resId",
         element  : <RestaurantMenu />
-      },{
+      },
+      {
         path     : "/instamart",
         element  : (<Suspense fallback={<Shimmer />}> <Instamart /></Suspense> )
+      },
+      {
+        path     : "/help",
+        element  : (<Suspense fallback={<div className="container"><h1>Loading...</h1></div>}> <Help /></Suspense> )
       }
     ],
   },
