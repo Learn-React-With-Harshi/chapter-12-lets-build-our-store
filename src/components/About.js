@@ -20,12 +20,12 @@ class About extends Component {
     console.log("About(parent) - render");
 
     return (
-      <div className="container flex justify-around">
-        <div className="card-container w-[30%] h-2/4">
+      <div className="container flex justify-around mob:flex-col">
+        <div className="card-container w-[30%] h-2/4 mob:w-auto">
           <h1 className="card-container-title">About Me</h1>
           <ProfileClass name={GITHUB_USER_NAME}/>  { /* Passing props from parent to child */ }
         </div>
-        <div className="card-container w-[70%]">
+        <div className="card-container w-[70%] mob:w-auto">
           <h1 className="card-container-title">About this project</h1>
           <BlogClass name={GITHUB_BLOG_NAME}/> { /* Passing props from parent to child */ }
         </div>  

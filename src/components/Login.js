@@ -53,20 +53,20 @@ const Login = () => {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className="login-form border border-gray shadow basis-[500px] h-[400px] m-auto flex items-center justify-center flex-col gap-3">
-          <span className='login-msg text-blue-dark text-lg font-extrabold'>{state.msg ? state.msg : "Welcome to Insta Food. "} Please Login!</span>
-          <img className="logo w-[70px] ml-2.5" alt="logo" src= {logo} />
+        <Form className="border border-gray shadow basis-[500px] h-[400px] m-auto flex items-center justify-center flex-col gap-3 mob:basis-[300px] mob:h-[360px]">
+          <span className="text-blue-dark text-lg font-extrabold mob:text-sm">{state.msg ? state.msg : "Welcome to Insta Food. "} Please Login!</span>
+          <img className="w-[70px] ml-2.5 mob:mx-auto" alt="logo" src= {logo} />
           {isSubmitting && <div>Loading...</div>}
-          <div className="email flex justify-center p-2.5">
-            <label htmlFor="email" className="email-label p-2.5 w-[100px]">Email</label>
-            <Field type="email" name="email" id="email" className="outline-none text-sm h-10 w-[200px] rounded-md bg-gray" 
+          <div className="flex justify-center p-2.5">
+            <label htmlFor="email" className="p-2.5 w-[100px] mob:text-left mob:h-8 mob:text-sm">Email</label>
+            <Field type="email" name="email" id="email" className="outline-none p-1 text-sm h-10 w-[200px] rounded-md bg-gray mob:w-[180px] mob:h-8" 
             />
           </div>
           <ErrorMessage name="email" component="div"  id="pwd" className="error-text"/>
 
           <div className="pwd flex justify-center p-2.5">
-            <label htmlFor="password" className="pwd-label p-2.5 w-[100px]">Password</label>
-            <Field type="password" name="password" id="pwd" className="outline-none text-sm h-10 w-[200px] rounded-md bg-gray" />
+            <label htmlFor="password" className="pwd-label p-2.5 w-[100px] mob:text-left mob:h-8 mob:text-sm">Password</label>
+            <Field type="password" name="password" id="pwd" className="outline-none p-1 text-sm h-10 w-[200px] rounded-md bg-gray mob:w-[180px] mob:h-8" />
           </div>
           <ErrorMessage name="password" component="div" className="error-text"/>
 

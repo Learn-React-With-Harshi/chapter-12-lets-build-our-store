@@ -35,11 +35,11 @@ export const NavComponent = (user) => {
   return (
     <div className="">
     <ul className="flex max-w-2xl items-center justify-between mt-2.5 mr-2.5">
-        <li className="p-2.5"> <Link to="/"><button className="nav--btn "> Home</button></Link></li>
-        <li className="p-2.5"> <Link to="/about"><button className="nav--btn" > About</button></Link> </li>
-        <li className="p-2.5"> <Link to="/instamart"><button className="nav--btn"> Instamart</button></Link></li>
+        <li className="p-2.5"> <Link to="/"><button className="nav--btn mob:w-12 mob:text-xs"> Home</button></Link></li>
+        <li className="p-2.5"> <Link to="/about"><button className="nav--btn mob:w-12 mob:text-xs" > About</button></Link> </li>
+        <li className="p-2.5"> <Link to="/instamart"><button className="nav--btn mob:w-12 mob:text-xs"> Instamart</button></Link></li>
         <li className="p-2.5"> <Link to="/help"><button className="nav--btn"> Help</button></Link></li>
-        <li className="p-2.5"> <button className="nav--btn" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout " : "Login " }  
+        <li className="p-2.5"> <button className="nav--btn mob:w-12 mob:text-xs" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout " : "Login " }  
           <span className={isOnline ? "text-green" : "text-red" }>●</span></button>
         </li>
       </ul> 

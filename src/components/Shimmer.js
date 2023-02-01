@@ -3,11 +3,11 @@ import { SHIMMER_MENU_ITEMS_COUNT } from '../config';
 
 const CardShimmer = () => {
   return (
-    <div className="shimmer-card basis-[250px] p-2.5 mb-2.5 shadow animate-pulse">
-      <div className="shimmer-img  h-[144px] w-[230px] bg-bio"></div>
-      <div className="shimmer-title  w-3/5 mt-2.5 h-[15px]  bg-bio "></div>
-      <div className="shimmer-tags  w-4/5 mt-1 h-[15px]  bg-bio"></div>
-      <div className="shimmer-details  w-full mt-[18px] h-[15px]  bg-bio"></div>
+    <div className="basis-[250px] mob:basis-[150px] p-2.5 mb-2.5 shadow animate-pulse">
+      <div className="h-[144px] w-[230px] bg-bio mob:w-[130px] mob:h-[81px]"></div>
+      <div className="w-3/5 mt-2.5 h-[15px]  bg-bio "></div>
+      <div className="w-4/5 mt-1 h-[15px]  bg-bio"></div>
+      <div className="w-full mt-[18px] h-[15px]  bg-bio"></div>
     </div>
   );
 }

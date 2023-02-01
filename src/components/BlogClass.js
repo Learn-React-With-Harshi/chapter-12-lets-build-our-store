@@ -41,20 +41,20 @@ class Blog extends React.Component {
     console.log("Blog Component - render");
     return (
       <div className="flex flex-col gap-5"> 
-        <div className="flex gap-5 card-container">
-          <div className="flex justify-center">
-            <img className="rounded-md w-[230px] border-none align-middle" src={blog.avatar_url} alt={blog.name} />
+        <div className="flex gap-5 card-container mob:flex-col mob:items-center">
+          <div className="flex justify-center ">
+            <img className="rounded-md w-[230px] mob:hidden md:hidden sm:hidden xsm:hidden border-none align-middle" src={blog.avatar_url} alt={blog.name} />
           </div>
           <div className="">
             <h3 className="text-xl mt-2.5 text-title font-bold">{blog.name}</h3>
             <p className="text-base text-bio pt-5 mt-0 mb-4">{blog.bio}</p>
-            <div className="flex gap-12">
+            <div className="flex gap-12 mob:gap-2 ">
               <div className="flex gap-2 text-title">
-                <FiUsers /><span>{blog.followers} followers</span>
+                <FiUsers /><span className="mob:text-xs">{blog.followers} followers</span>
               </div>
 
               <div className="flex gap-2 text-title">
-                <RiGitRepositoryLine /><span>{repoList.length-1} repositories</span>
+                <RiGitRepositoryLine /><span className="mob:text-xs">{repoList.length-1} repositories</span>
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-  @apply mt-24 min-h-screen min-w-fit;
+  @apply mt-24 min-h-screen;
 }
 
 .card-container {
