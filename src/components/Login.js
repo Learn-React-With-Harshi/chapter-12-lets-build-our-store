@@ -1,27 +1,26 @@
 
-import React from 'react';
+import React, {useContext, useState} from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Navigate } from "react-router-dom";
-import {useState } from 'react';
 import logo from '../../assets/images/logo-main.png';
-import { useLocation } from 'react-router-dom';
+import { UserContext } from "../utils/UserContext";
 
 const Login = () => {
-  const [user, setUser] = useState({});
-  const {state} = useLocation();
+  const {user, setUser} = useContext(UserContext);
 
   const loginUser = (values) => {
     let response = {};
-    //do some authentication and server response
-    if(values.email === "solaiharshitha0@gmail.com") {
+    let user_email = values.email;
+    //do some authentication and server response, for now anyone can login
+    if(true) {
       response = {
-        name : "Harshitha",
-        email : values.email,
-        authenticated : true
+        name : user_email.substring(0, user_email.indexOf("@")),
+        email : user_email,
+        isAuthenticated : true
       }
     } else {
       response = {
-        authenticated : false
+        isAuthenticated : false
       }
     }
     
@@ -48,13 +47,13 @@ const Login = () => {
         setSubmitting(true);
         const response = await loginUser(values);
         console.log("OnSubmit", response);
-        setUser(response);
+        setUser((prev)=> response);
         setSubmitting(false);
       }}
     >
       {({ isSubmitting }) => (
         <Form className="border border-gray shadow basis-[500px] h-[400px] m-auto flex items-center justify-center flex-col gap-3 mob:basis-[300px] mob:h-[360px]">
-          <span className="text-blue-dark text-lg font-extrabold mob:text-sm">{state.msg ? state.msg : "Welcome to Insta Food. "} Please Login!</span>
+          <span className="text-blue-dark text-lg font-extrabold mob:text-sm">{user.msg ? user.msg : "Welcome to Insta Food. "} Please Login!</span>
           <img className="w-[70px] ml-2.5 mob:mx-auto" alt="logo" src= {logo} />
           {isSubmitting && <div>Loading...</div>}
           <div className="flex justify-center p-2.5">
@@ -83,7 +82,7 @@ const Login = () => {
       
     }
     </Formik>
-    { user.authenticated  && <Navigate to="/" state={user} replace={true} />}
+    { user.isAuthenticated  && <Navigate to="/" replace={true} />}
   </div>
 
 

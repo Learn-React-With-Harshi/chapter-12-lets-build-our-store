@@ -7,7 +7,7 @@ const Section = ({id, title, description, isVisible, setIsVisible }) => {
   return (
     
     <div className="flex flex-col shadow rounded-md p-2.5 m-2.5">
-      <div className="flex justify-between"> 
+      <div className="flex justify-between items-center"> 
         <h3 className="font-semibold text-lg text-title">{title}</h3>
         {
         isVisible ? (

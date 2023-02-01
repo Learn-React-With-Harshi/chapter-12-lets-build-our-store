@@ -12,7 +12,7 @@
 
 I have already implemented `props drilling` in our app InstaFood without knowing its actually name. So, I wanted to pass user info like name, email and isAuthenticated values that I get in landing page (`AppLayout`) component to `NavComponent` in `Header` where based on isAuthenticated value, display Login or Logout button.
 
-Check App.js & Header.js to see how the props is passed from `AppLayout` to `NavComponent`
+Check App.js & Header.js to see how the props is passed from `AppLayout` to `NavComponent` of previous chapter to see the props drilling implementation. Because, in this chapter we will be modifying that with React Context. More about that in React context section below.
 
 ### Lifting up state
 
@@ -71,10 +71,27 @@ Once the user clicks on any section's down arrow button, the state that parent m
 
 Now, in Help component `isVisible` is set to true, because of which the arrow changes to up arrow and description is displayed. Note that all other sections state is still false and no changes happens there.
 
-<ans>Subsequent User clicks </ans>
+<ans>Subsequent User clicks on same FAQ</ans>
+Now, if the user again clicks on up arrow, it's `setIsVisible` is updated with status `false` and `isVisible` in the parent will be false (check the condition at line no :50). Because of which the arrow changes to down arrow and description is hidden.  
 
+<ans>User clicks on different FAQ</ans>
+If the user clicks on another FAQ, that FAQ's `setIsVisible` is updated to true, because of which the arrow changes to up arrow and description is displayed. If any other FAQ description was visible, it's hidden because the `isVisible` state of parent now hold the newly clicked FAQ id which is different from question.id (check the condition at line no :50) and `isVisible` is set to true and all other visible descriptions are hidden.
 
 ### React Context
+In the props drilling examples, we tried to pass userInfo through multiple components to reach NavComponent. Props drilling could be used when data need to be passed to a few (2-3 components) before reaching its destination component. But, what if there are lot of components in the hierarchy which needs to be crossed, it becomes tedious and inefficient. The solution to this is to store the data in Context which could be then accessed throughout the application. 
+
+Let's try to use Context to use userInfo data in NavComponent. 
+
+- Create a context `UserContext` with keys that we need in our user object and dummy values in `UserContext.js` under utils folder. 
+- Import the created `UserContext` into the App.js (where we want to use)
+- Create a state to maintain this user object 
+- Enclose `<UserContext.Provider> </UserContext.Provider>` component around the components where the  user object must be accessible. 
+- Now, pass this state as props to the UserContext provider and use this components that needs it.
+- Let's say we must to use the user object in NavComponent in Header.js. Import `UserContext` that we created into Header.js
+- Create a variable user and set the UserContext using `useContext(UserContext)`
+- Now use user.name in Header 
+
+
 
 
 ### Nested Contexts
