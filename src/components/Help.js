@@ -11,9 +11,9 @@ const Section = ({id, title, description, isVisible, setIsVisible }) => {
         <h3 className="font-semibold text-lg text-title">{title}</h3>
         {
         isVisible ? (
-        <SlArrowUp onClick={() => setIsVisible({id : id, status : false})} className="cursor-pointer" />
+        <SlArrowUp onClick={() => setIsVisible(false)} className="cursor-pointer" />
       ) : (
-        <SlArrowDown onClick={() => setIsVisible({id : id, status : true})} className="cursor-pointer" />
+        <SlArrowDown onClick={() => setIsVisible(true)} className="cursor-pointer" />
       )}
       </div>
       {isVisible && <p className="text-bio text-base">{description}</p>}
@@ -22,11 +22,7 @@ const Section = ({id, title, description, isVisible, setIsVisible }) => {
 };
 
 const Help = () => {
-  const [visibleSection, setIsvisibleSection] = useState(
-    {
-      id : 1,
-      status : false
-    }); /* Initial Dummy value */
+  const [visibleSection, setVisibleSection] = useState(""); /* Initially description of all questions are hidden */
 
   return (
     <div className="container">
@@ -35,8 +31,15 @@ const Help = () => {
       {FAQ.map((question) => {
         return (
           <Section key={question.id} id={question.id} title={question.title} description={question.description}
-          isVisible={visibleSection.status && visibleSection.id === question.id }
-          setIsVisible={(obj) => setIsvisibleSection(obj)}
+          isVisible={visibleSection.id === question.id }
+          setIsVisible={(display) => {
+            if(display) {
+              setVisibleSection(question.id);
+            } else {
+              setVisibleSection(" ");
+            }
+          }
+          }
         />
   
         )
