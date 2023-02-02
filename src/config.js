@@ -48,7 +48,7 @@ export const FAQ = [
   },
   {
     id: 475,
-    title: "Will Swiggy be accountable for quality/quantity? ",
+    title: "Will Insta Food be accountable for quality/quantity? ",
     description:
       "Quantity and quality of the food is the restaurants' responsibility. However in case of issues with the quality or quantity, kindly submit your feedback and we will pass it on to the restaurant.",
   },
