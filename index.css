@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-  @apply mt-24 min-h-screen;
+  @apply mt-24 min-h-[77vh];
 }
 
 .card-container {
