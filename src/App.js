@@ -2,7 +2,7 @@ import React, {lazy, Suspense, useState, useEffect, useContext} from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-import UserContextProvider from "./utils/UserContext";
+import UserContext from "./utils/UserContext";
 
 import * as MainHeader from "./components/Header"; /* Imported using import * as namespace  */ 
 import Body from "./components/Body"; /* Imported using default export */
@@ -25,10 +25,16 @@ const About = lazy(() => import("./components/About"));
 const Help = lazy(() => import("./components/Help"));
 
 const App = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    isAuthenticated : false
+  })
+
   return (
-    <UserContextProvider>
+    <UserContext.Provider value={{user : user, setUser : setUser}}>
       <Outlet />
-    </UserContextProvider>
+    </UserContext.Provider>
     
   )
 }

@@ -80,18 +80,35 @@ If the user clicks on another FAQ, that FAQ's `setIsVisible` is updated to true,
 ### React Context
 In the props drilling examples, we tried to pass userInfo through multiple components to reach NavComponent. Props drilling could be used when data need to be passed to a few (2-3 components) before reaching its destination component. But, what if there are lot of components in the hierarchy which needs to be crossed, it becomes tedious and inefficient. The solution to this is to store the data in Context which could be then accessed throughout the application. 
 
-Let's try to use Context to use userInfo data in NavComponent. 
+Let's try to use Context Provider to share userInfo data between Login, NavComponent & Footer . 
 
 - Create a context `UserContext` with keys that we need in our user object and dummy values in `UserContext.js` under utils folder. 
 - Import the created `UserContext` into the App.js (where we want to use)
 - Create a state to maintain this user object 
 - Enclose `<UserContext.Provider> </UserContext.Provider>` component around the components where the  user object must be accessible. 
-- Now, pass this state as props to the UserContext provider and use this components that needs it.
+- Now, pass this state as value props to the UserContext provider and use this components that needs it.
+
+<ans>In Header</ans>
 - Let's say we must to use the user object in NavComponent in Header.js. Import `UserContext` that we created into Header.js
 - Create a variable user and set the UserContext using `useContext(UserContext)`
 - Now use user.name in Header 
 
+<ans>In Footer</ans>
+- Import `UserContext` that we created into Footer.js
+- Create a variable user and set the UserContext using `useContext(UserContext)`
+- Now use user.name in Header 
 
+<ans>Updating the Context in Login</ans>
+- Import `UserContext` that we created into Footer.js
+- Create a variable and set the UserContext using `useContext(UserContext)`
+```javscript 
+const {user, setUser} = useContext(UserContext); 
+```
+- After succesful login of user, set the user response object (which contains the UserContext to be set) using `setUser` 
+- Check if user.isAuthenticated is true and navigate to the landing page (App.js)
+
+<ans>Updating the Context in Header</ans>
+- Once the user clicks on the Login/Logout button, set the user object to isAuthenticated to false before navigating to the login page 
 
 
 ### Nested Contexts

@@ -3,7 +3,7 @@ import React, {useContext, useState} from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Navigate } from "react-router-dom";
 import logo from '../../assets/images/logo-main.png';
-import { UserContext } from "../utils/UserContext";
+import  UserContext  from "../utils/UserContext";
 
 const Login = () => {
   const {user, setUser} = useContext(UserContext);
@@ -47,7 +47,7 @@ const Login = () => {
         setSubmitting(true);
         const response = await loginUser(values);
         console.log("OnSubmit", response);
-        setUser((prev)=> response);
+        setUser(response);
         setSubmitting(false);
       }}
     >
