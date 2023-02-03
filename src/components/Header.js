@@ -3,31 +3,59 @@ import {useContext, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import useOnline from '../utils/useOnline';
 import UserContext from "../utils/UserContext";
+import { AiOutlineMenu } from "react-icons/ai";
 
-export const ImgComponent = ({item, itemname}) => {
-  return(
-    <a href="/"> <img className={itemname} alt={itemname} src= {item} /> </a>
-    )
-}
+const navLinks = [
+  {
+    title : 'Home',
+    path  : '/'
+  },
+  {
+    title : 'About',
+    path  : '/about'
+  },
+  {
+    title : 'Instamart',
+    path  : '/instamart'
+  },
+  {
+    title : 'Help',
+    path  : '/help'
+  }
+];
+
 
 export const Title = () => {
   return(
-    <ImgComponent item={logo} itemname={"logo ml-2.5 w-[70px]"}/>
+    <Link to="/"> <img className="logo ml-2.5 w-[70px]" alt={"logo"} src= {logo} /> </Link>
   )
 };
 
+export const Intro = () => {
+  const {user} = useContext(UserContext);
+  return(
+    <div className='flex justify-center items-center'>
+      <span className="py-2.5 px-1 mt-2.5 mr-1 font-bold text-green"> { user.name ? `Hello  ${user.name}` : "Please Login "} !!!</span>
+    </div>
+  )
+};
+
+
 export const NavComponent = () => {
   const {user, setUser} = useContext(UserContext);
-
-  console.log("user:", user);
-  const [isLoggedIn, setIsLoggedIn] = useState(user.isAuthenticated || false);
   const navigate = useNavigate();
-  
   const isOnline = useOnline();
 
+  const [isLoggedIn, setIsLoggedIn] = useState(user.isAuthenticated || false);
+  const [menuActive, setMenuActive] = useState(false);
 
-  console.log("In Nav Component", user);
-  
+  const closeMenu = () => {
+    const menu = document.querySelector('.menu-content-container');
+    menu.classList.remove('active');
+    menu.classList.add('false');
+    setMenuActive(!menuActive)
+  }
+
   const toggleLogin = () => {
     console.log("isLoggedIn", isLoggedIn);
     setIsLoggedIn(!isLoggedIn);
@@ -39,27 +67,36 @@ export const NavComponent = () => {
     navigate('/login');
   }
 
-
   return (
-    <div className="flex items-center justify-between ">
-      <span className="p-2.5 mt-2.5 mr-2.5 font-bold text-green"> { user.name ? `Hello  ${user.name}` : "Please Login "} !!!</span>
-      <ul className="flex max-w-2xl items-center justify-between mt-2.5 mr-2.5">
-            <li className="p-2.5"> <Link to="/"><button className="nav--btn mob:w-12 mob:text-xs"> Home</button></Link></li>
-            <li className="p-2.5"> <Link to="/about"><button className="nav--btn mob:w-12 mob:text-xs" > About</button></Link> </li>
-            <li className="p-2.5"> <Link to="/instamart"><button className="nav--btn mob:w-12 mob:text-xs"> Instamart</button></Link></li>
-            <li className="p-2.5"> <Link to="/help"><button className="nav--btn mob:w-12 mob:text-xs"> Help</button></Link></li>
-            <li className="p-2.5"> <button className="nav--btn mob:w-12 mob:text-xs" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout " : "Login " }  
-              <span className={isOnline ? "text-green" : "text-red" }>●</span></button>
+    <div className="flex items-center justify-between">
+      <div className={`menu-content-container flex items-center pr-7  ${menuActive && 'active'}`} >
+        <ul className={`h-full lg:flex xl:flex md:flex items-center pr-5 ${!menuActive && 'hidden'}  ${menuActive && 'flex flex-col flex-start '}`}>
+          { navLinks.map((link, index)=> (
+            <li key={index} className="p-2.5">
+              <Link to={link.path}><button className="nav--btn">{link.title}</button></Link>
             </li>
-        </ul> 
+            ))
+          }
+          <li className="p-2.5"> <button className="nav--btn" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout " : "Login " }  
+              <span className={isOnline ? "text-green" : "text-red" }>●</span></button>
+          </li>
+        </ul>
+      </div>
+      <AiOutlineMenu className='lg:hidden xl:hidden md:hidden flex w-[65px] text-base text-blue-dark cursor-pointer '
+      onClick={()=> { console.log("icon")
+        closeMenu();
+        setMenuActive(!menuActive)
+      }
+      }/>
     </div>
   );
 }
 
-export const Header = (state) => {
+export const Header = () => {
   return (
     <div className="flex justify-between bg-white shadow fixed top-0 left-0 w-full h-[70px] z-50">
       <Title />
+      <Intro />
       <NavComponent />
     </div>
   );

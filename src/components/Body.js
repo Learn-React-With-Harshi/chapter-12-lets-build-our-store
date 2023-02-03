@@ -58,10 +58,10 @@ const Body = () => {
       </div>)
   } 
 
-  const addFavourite = (props) => {
+  const addFavourite = (props) => { 
      // If restaurant is not marked fav, then add to local storage 
     if (!favRestaurants.find(restaurant => restaurant.data.id === props.data.id)) {
-      setFavRestaurants([...favRestaurants, props]);
+      setFavRestaurants([...favRestaurants, props]); 
   } else { //If restaurant is already in local storage, then remove from it.
       const modifiedFavRestaurants = favRestaurants.filter((restaurant) => restaurant.data.id !== props.data.id);
       setFavRestaurants(modifiedFavRestaurants);

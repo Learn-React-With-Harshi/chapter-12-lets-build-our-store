@@ -47,3 +47,7 @@
 .error-text {
   @apply text-red text-xs;
 }
+
+.active {
+  @apply left-0 w-[300px] h-[calc(100%-65px)] bg-white fixed top-[70px] flex-col py-0 pl-[30px];
+}
