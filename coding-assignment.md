@@ -8,7 +8,7 @@
 
 ### Props Drilling 
 
-`Props Drilling` is the technique by which props are passed from one component to another, which in turn passes to another component and so on to reach the component which needs this props.
+`Prop drilling` is a technique where data is passed from one component through multiple components until it gets to the component where the data is needed.
 
 I have already implemented `props drilling` in our app InstaFood without knowing its actually name. So, I wanted to pass user info like name, email and isAuthenticated values that I get in landing page (`AppLayout`) component to `NavComponent` in `Header` where based on isAuthenticated value, display Login or Logout button.
 
