@@ -31,7 +31,7 @@ const Help = () => {
       {FAQ.map((question) => {
         return (
           <Section key={question.id} id={question.id} title={question.title} description={question.description}
-          isVisible={visibleSection.id === question.id }
+          isVisible={visibleSection === question.id }
           setIsVisible={(display) => {
             if(display) {
               setVisibleSection(question.id);
@@ -39,8 +39,7 @@ const Help = () => {
               setVisibleSection(" ");
             }
           }
-          }
-        />
+          } />
   
         )
       }
