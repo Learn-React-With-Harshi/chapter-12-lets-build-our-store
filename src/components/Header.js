@@ -4,7 +4,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import useOnline from '../utils/useOnline';
 import UserContext from "../utils/UserContext";
 import { AiOutlineMenu } from "react-icons/ai";
-
+import { useSelector } from 'react-redux';
 const navLinks = [
   {
     title : 'Home',
@@ -45,10 +45,11 @@ export const NavComponent = () => {
   const {user, setUser} = useContext(UserContext);
   const navigate = useNavigate();
   const isOnline = useOnline();
-
+  const totalItemsCount = useSelector(store => store.cart.totalItemsCount);
+  console.log("Header:", totalItemsCount);
   const [isLoggedIn, setIsLoggedIn] = useState(user.isAuthenticated || false);
   const [menuActive, setMenuActive] = useState(false);
-
+  
   const closeMenu = () => {
     const menu = document.querySelector('.menu-content-container');
     menu.classList.remove('active');
@@ -77,6 +78,8 @@ export const NavComponent = () => {
             </li>
             ))
           }
+          <li className="p-2.5"><Link to="/cart"> <button className="nav--btn"> Cart <span className='text-orange font-bold pl-1'>{totalItemsCount}</span> </button> </Link>
+          </li>
           <li className="p-2.5"> <button className="nav--btn" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout " : "Login " }  
               <span className={isOnline ? "text-green" : "text-red" }>●</span></button>
           </li>

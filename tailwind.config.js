@@ -18,7 +18,7 @@ module.exports = {
     colors: {
       'yellow': '#ffc300',
       'blue-dark': '#001d3d',
-      'orange': '#ff7849',
+      'orange': '#fc8019',
       'green': '#6dad1f',
       'white' : '#fff',
       'red': '#c70039',
@@ -34,6 +34,7 @@ module.exports = {
       'bio' : '#999',
       'blue' : '#1890ff',
       'shimmer' : '#999',
+      'gray-count' : '#bebfc5'
       
     },
     fontFamily: {

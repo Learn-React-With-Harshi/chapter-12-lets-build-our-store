@@ -25,7 +25,7 @@
 }
 
 .nav--btn {
-  @apply w-20 h-8 rounded-md basis-16 bg-white  text-blue-dark outline-none hover:bg-yellow text-base;
+  @apply w-20 h-8 rounded-md basis-16 bg-white  text-blue-dark outline-none hover:bg-yellow hover:text-blue-dark text-base;
 }
 
 .icon--i {

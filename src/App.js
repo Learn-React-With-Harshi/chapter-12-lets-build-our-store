@@ -1,8 +1,10 @@
 import React, {lazy, Suspense, useState, useEffect, useContext} from "react";
+import { Provider } from 'react-redux';
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import UserContext from "./utils/UserContext";
+import store from "./utils/store";
 
 import * as MainHeader from "./components/Header"; /* Imported using import * as namespace  */ 
 import Body from "./components/Body"; /* Imported using default export */
@@ -11,6 +13,7 @@ import { Footer as MainFooter } from "./components/Footer"; /* Imported using Na
 import Profile from "./components/Profile";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
+import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Login from "./components/Login";
 import Shimmer from "./components/Shimmer";
@@ -32,10 +35,11 @@ const App = () => {
   })
 
   return (
+    <Provider store={store} >
     <UserContext.Provider value={{user : user, setUser : setUser}}>
       <Outlet />
     </UserContext.Provider>
-    
+    </Provider>
   )
 }
 
@@ -77,6 +81,10 @@ const appRouter = createBrowserRouter([
         {
           path     : "/contact",
           element  : <Contact />
+        },
+        {
+          path     : "/cart",
+          element  : <Cart />
         },
         {
           path     : "/",
