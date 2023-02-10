@@ -15,15 +15,34 @@
   - Button to clear cart must be provided, which on click clears the cart 
   - All these must be done with the help of Redux Store.
 
-<ans>Additional Features thats nice to have </ans>
+<ans>Additional Features that I implemented</ans>
 
-  - Change the Add button with - and +, after the item is added once 
-  - Implement Remove Item from cart in Restaurant Menu Page & Cart Page 
-  - 
+  - Change the Add button to - and + and item quantity inbetween 
+  - Implement Remove Item  from cart in Restaurant Menu Page & Cart Page 
+  - Implement Add Item to cart in Restaurant Menu Page & Cart Page
+  - Update item quantity in in Restaurant Menu Page & total item quantity (all items quantities) Cart Page
 
-Checkout Workflow :
+
+### WORK IN PROGRESS 
+
+<ans>Checkout Workflow :</ans> 
+
+In Javascript, I would like something like 
+```javascript
+createOrder(cart)
+.then((orderId) =>  orderId)
+.then((orderId)=> proceedToPayment(orderId))
+.then((paymentInfo) => showOrderSummary(paymentInfo))
+.then((summary) => updateWallet(summary.payment))
+.catch((errMsg) => {console.log(errMsg.message)});
+```
+
   - Create Cart Page with Checkout Workflow, Auth -> Cart -> Delivery -> Payment -> Order Confirmation
-  - In Cart page, check if the user is logged in using user info stored in Redux. If loggedin, link that selected items to that user
+  - In Cart page, check if the user is logged in by checking user info stored in Redux. If loggedin, link that selected items to that user
   - If not loggedin, request the user to login and after log in, link the selected items to that user
-  - On click on proceed to pay 
+  - On click on proceed to pay, take to dummy payment page 
+  - dummy successful payment 
+  - show order summary 
+
+
 
