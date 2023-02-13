@@ -18,7 +18,6 @@ import Error from "./components/Error";
 import Contact from "./components/Contact";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Login from "./components/Login";
 import Shimmer from "./components/Shimmer";
 /* import Instamart from "./components/Instamart";  
 
@@ -30,35 +29,35 @@ const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
 const Help = lazy(() => import("./components/Help"));
 
+const App = () => {
+  return (
+    <Provider store={store} >
+      <AuthContextProvider>
+          <Outlet />
+      </AuthContextProvider>
+      </Provider>
+  )
+}
+
 const AppLayout = () => {
   return (
     <>
-      <Provider store={store} >
-      <AuthContextProvider>
-        <MainHeader.Header />
-          <Outlet />
-        <MainFooter />
-      </AuthContextProvider>
-      </Provider>
+      <MainHeader.Header />
+      <Outlet />
+      <MainFooter />
     </>
   );
 };
 
 const appRouter = createBrowserRouter([
+  { path         : "/",
+    element      : <App />,
+    errorElement : <Error />,
+    children : [
   { path       : "/",
     element      : <AppLayout />,
     errorElement : <Error />,
     children     : [
-      {
-        path : '/signin',
-        element      : <SignIn /> ,
-        errorElement : <Error />,
-      },
-      {
-        path : '/signup',
-        element      : <SignUp /> ,
-        errorElement : <Error />,
-      },
       {
         path     : "/about",
         element  : (<Suspense fallback={<div className="container"><h1>Loading...</h1></div>}> <About /></Suspense> ),
@@ -92,8 +91,18 @@ const appRouter = createBrowserRouter([
         element  : (<Suspense fallback={<div className="container"><h1>Loading...</h1></div>}> <Help /></Suspense> )
       }
     ]
-  }
-]);
+  },
+  {
+    path : '/signin',
+    element      : <SignIn /> ,
+    errorElement : <Error />,
+  },
+  {
+    path : '/signup',
+    element      : <SignUp /> ,
+    errorElement : <Error />,
+  }]
+}]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

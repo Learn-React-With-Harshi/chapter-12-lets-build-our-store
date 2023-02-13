@@ -48,14 +48,17 @@ const SignIn = () => {
   return (
     <div>
     <section className="h-screen">
-      <div className="container px-6 py-12 h-full">
+      <div className="px-6 py-12 h-full">
         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-dark">
           <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
+            <div className="flex justify-center mb-6">
+            <img src={logo} class="w-[20%]" alt="Phone image" />
+            </div>
             <form onSubmit={handleSubmit}>
               <div className="mb-6">
                 <input
                   type="email"
-                  className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-dark bg-white bg-clip-padding border border-solid border-gray rounded transition ease-in-out m-0 focus:text-gray focus:bg-white focus:border-yellow focus:outline-none"
+                  className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-dark bg-white bg-clip-padding border border-solid border-gray rounded transition ease-in-out m-0 focus:text-gray-dark focus:bg-white focus:border-yellow focus:outline-none"
                   placeholder="Email address"
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -64,13 +67,13 @@ const SignIn = () => {
               <div className="mb-6">
                 <input
                   type="password"
-                  className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray rounded transition ease-in-out m-0 focus:text-gray focus:bg-white focus:border-yellow focus:outline-none"
+                  className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray rounded transition ease-in-out m-0 focus:text-gray-dark focus:bg-white focus:border-yellow focus:outline-none"
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
               <div className="mb-6">
-                <span>{error && error} </span>
+                <span className='error-text'>{error && error} </span>
               </div>
 
               <button type="submit"
