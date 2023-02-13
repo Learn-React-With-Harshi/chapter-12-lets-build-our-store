@@ -4,6 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { Navigate } from "react-router-dom";
 import logo from '../../assets/images/logo-main.png';
 import  UserContext  from "../utils/UserContext";
+import GoogleButton from 'react-google-button';
 
 const Login = () => {
   const {user, setUser} = useContext(UserContext);
@@ -29,7 +30,7 @@ const Login = () => {
 
   return (
   <div className="login-container mt-[100px] min-h-9 text-center flex">
-  
+    <GoogleButton />
     <Formik
       initialValues={{ email: '', password: '' }}
       validate={values => {

@@ -2,9 +2,11 @@ import logo from '../../assets/images/logo-main.png';
 import {useContext, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import useOnline from '../utils/useOnline';
-import UserContext from "../utils/UserContext";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useSelector } from 'react-redux';
+
+import { UserAuth } from '../utils/context/AuthContext';
+
 const navLinks = [
   {
     title : 'Home',
@@ -32,22 +34,31 @@ export const Title = () => {
 };
 
 export const Intro = () => {
-  const {user} = useContext(UserContext);
+  const { user } = UserAuth();
+  let name ;
+  if(user){ 
+    if(user.displayName != null) {
+      name = user.displayName;
+    } else {
+      name = user.email;
+    }
+  }
+
   return(
     <div className='flex justify-center items-center'>
-      <span className="py-2.5 px-1 mt-2.5 mr-1 font-bold text-green"> { user.name ? `Hello  ${user.name}` : "Please Login "} !!!</span>
+      <span className="py-2.5 px-1 mt-2.5 mr-1 font-bold text-green"> { user  ?  `Hello ${name} ` : "Please Login"} !!!</span>
     </div>
   )
 };
 
 
 export const NavComponent = () => {
-  const {user, setUser} = useContext(UserContext);
+  const { user, logOut} = UserAuth();
   const navigate = useNavigate();
+  console.log(user);
   const isOnline = useOnline();
   const totalItemsCount = useSelector(store => store.cart.totalItemsCount);
   console.log("Header:", totalItemsCount);
-  const [isLoggedIn, setIsLoggedIn] = useState(user.isAuthenticated || false);
   const [menuActive, setMenuActive] = useState(false);
   
   const closeMenu = () => {
@@ -57,15 +68,16 @@ export const NavComponent = () => {
     setMenuActive(!menuActive)
   }
 
-  const toggleLogin = () => {
-    console.log("isLoggedIn", isLoggedIn);
-    setIsLoggedIn(!isLoggedIn);
-    if(!user.isAuthenticated ) {
-      setUser({isAuthenticated: false }) 
-    } else {
-      setUser({isAuthenticated: false, msg: "You have logged out of Insta Food App. " }) ;
-    }  
-    navigate('/login');
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const handleSignIn = () => {
+    navigate('/signin');
   }
 
   return (
@@ -80,9 +92,13 @@ export const NavComponent = () => {
           }
           <li className="p-2.5"><Link to="/cart"> <button className="nav--btn"> Cart <span className='text-orange font-bold pl-1'>{totalItemsCount}</span> </button> </Link>
           </li>
-          <li className="p-2.5"> <button className="nav--btn" onClick={() => {toggleLogin()}} > {isLoggedIn?  "Logout " : "Login " }  
-              <span className={isOnline ? "text-green" : "text-red" }>●</span></button>
+
+          <li className="p-2.5"> 
+            <button className="nav--btn" onClick={() => { user ? handleSignOut() : handleSignIn()}} > { user ? "Logout  " : "Login  "}
+              <span className={isOnline ? "text-green" : "text-red" }>●</span>
+            </button>
           </li>
+        
         </ul>
       </div>
       <AiOutlineMenu className='lg:hidden xl:hidden md:hidden flex w-[65px] text-base text-blue-dark cursor-pointer '

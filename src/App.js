@@ -1,10 +1,13 @@
-import React, {lazy, Suspense, useState, useEffect} from "react";
+import React, {lazy, Suspense} from "react";
 import { Provider } from 'react-redux';
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-import UserContext from "./utils/UserContext";
 import store from "./utils/store";
+
+import { AuthContextProvider } from "./utils/context/AuthContext";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 import * as MainHeader from "./components/Header"; /* Imported using import * as namespace  */ 
 import Body from "./components/Body"; /* Imported using default export */
@@ -27,90 +30,69 @@ const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
 const Help = lazy(() => import("./components/Help"));
 
-const App = () => {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    isAuthenticated : false
-  })
-
-  return (
-    <Provider store={store} >
-    <UserContext.Provider value={{user : user, setUser : setUser}}>
-      <Outlet />
-    </UserContext.Provider>
-    </Provider>
-  )
-}
-
 const AppLayout = () => {
-  useEffect(()=>{
-    window.onbeforeunload = function() {
-      window.localStorage.removeItem("fav");
-      return '';
-    };  
-  },[]);
-  
   return (
     <>
-      
+      <Provider store={store} >
+      <AuthContextProvider>
         <MainHeader.Header />
-        <Outlet />
+          <Outlet />
         <MainFooter />
+      </AuthContextProvider>
+      </Provider>
     </>
   );
 };
 
 const appRouter = createBrowserRouter([
-  { path         : "/",
-    element      : <App />,
+  { path       : "/",
+    element      : <AppLayout />,
     errorElement : <Error />,
-    children : [
-    { path       : "/",
-      element      : <AppLayout />,
-      errorElement : <Error />,
-      children     : [
-        {
-          path     : "/about",
-          element  : (<Suspense fallback={<div className="container"><h1>Loading...</h1></div>}> <About /></Suspense> ),
-          children : [{
-            path    : "profile",
-            element : <Profile />
-          }]
-        },
-        {
-          path     : "/contact",
-          element  : <Contact />
-        },
-        {
-          path     : "/cart",
-          element  : <Cart />
-        },
-        {
-          path     : "/",
-          element  : <Body />
-        },
-        {
-          path     : "/restaurant/:resId",
-          element  : <RestaurantMenu />
-        },
-        {
-          path     : "/instamart",
-          element  : (<Suspense fallback={<Shimmer />}> <Instamart /></Suspense> )
-        },
-        {
-          path     : "/help",
-          element  : (<Suspense fallback={<div className="container"><h1>Loading...</h1></div>}> <Help /></Suspense> )
-        }
-      ]
-    },
-    ,
-    {
-      path : '/login',
-      element      : <Login /> ,
-      errorElement : <Error />,
-    }]
-}
+    children     : [
+      {
+        path : '/signin',
+        element      : <SignIn /> ,
+        errorElement : <Error />,
+      },
+      {
+        path : '/signup',
+        element      : <SignUp /> ,
+        errorElement : <Error />,
+      },
+      {
+        path     : "/about",
+        element  : (<Suspense fallback={<div className="container"><h1>Loading...</h1></div>}> <About /></Suspense> ),
+        children : [{
+          path    : "profile",
+          element : <Profile />
+        }]
+      },
+      {
+        path     : "/contact",
+        element  : <Contact />
+      },
+      {
+        path     : "/cart",
+        element  : <Cart />
+      },
+      {
+        path     : "/",
+        element  : <Body />
+      },
+      {
+        path     : "/restaurant/:resId",
+        element  : <RestaurantMenu />
+      },
+      {
+        path     : "/instamart",
+        element  : (<Suspense fallback={<Shimmer />}> <Instamart /></Suspense> )
+      },
+      {
+        path     : "/help",
+        element  : (<Suspense fallback={<div className="container"><h1>Loading...</h1></div>}> <Help /></Suspense> )
+      }
+    ]
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

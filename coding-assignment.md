@@ -46,3 +46,33 @@ createOrder(cart)
 
 
 
+SignIn With Google - Authentication using Firebase 
+
+1. Install SignIn with Google button -  npm install react-google-button 
+2. Create Firebase project for our app - Instafood 
+3. Click </> button - register app
+4. Install firebase : npm install firebase
+5. Initialize firebase by copying the given config into firebase.js
+6. Open Authentication card in Firbase -> Sign-in method -> Choose Google as provider -> give your gmail id and enable 
+7. Import getAuth into firebase.js
+```
+import { getAuth } from "firebase/auth";
+
+```
+8. export auth from firbase.js
+```
+export const auth = getAuth(app);
+```
+
+9. Create AuthContext.js 
+
+10. Handle the google signin in SignIn.js 
+
+11. Provider the UserAuthProvider in App.js 
+
+
+SignIn/SignUp using email and password - Firebase 
+
+1. In Firebase console, Authentication -> SignIn method -> Add new provider -> Enable Email.passord
+
+2. 
