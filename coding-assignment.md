@@ -43,6 +43,8 @@
 
 ### SignIn With Google - Authentication using Firebase 
 
+Reference : https://www.youtube.com/watch?v=cZAnibwI9u8&list=PLaPfwr_iF3CarlXMRMsgF6w4htzDg5tvh&index=2
+
 1. Install SignIn with Google button -  npm install react-google-button 
 2. Create Firebase project for our app - Instafood 
 3. Click </ans> button - register app
@@ -67,6 +69,8 @@ export const auth = getAuth(app);
 
 
 ### SignIn/SignUp using email and password - Firebase 
+
+Reference : https://www.youtube.com/watch?v=x62aBvnRCKw&list=PLaPfwr_iF3CarlXMRMsgF6w4htzDg5tvh&index=2
 
 1. In Firebase console, Authentication -> SignIn method -> Add new provider -> Enable Email.passord
 
