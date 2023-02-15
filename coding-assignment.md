@@ -27,30 +27,25 @@
 
 <ans>Checkout Workflow :</ans> 
 
-In Javascript, I would like something like 
-```javascript
-createOrder(cart)
-.then((orderId) =>  orderId)
-.then((orderId)=> proceedToPayment(orderId))
-.then((paymentInfo) => showOrderSummary(paymentInfo))
-.then((summary) => updateWallet(summary.payment))
-.catch((errMsg) => {console.log(errMsg.message)});
-```
-
-  - Create Cart Page with Checkout Workflow, Auth -> Cart -> Delivery -> Payment -> Order Confirmation
-  - In Cart page, check if the user is logged in by checking user info stored in Redux. If loggedin, link that selected items to that user
-  - If not loggedin, request the user to login and after log in, link the selected items to that user
-  - On click on proceed to pay, take to dummy payment page 
+  - Create Cart Page with Checkout Workflow, Auth -> Cart -> Delivery -> Payment -> Order Confirmation Summary
+  - In Cart page, check if the user is logged in, by checking AuthContext (Context API) . If loggedin, show options to select delivery adress and payment.
+  - If not loggedin, request the user to login/signup and after log in, show options to select delivery adress and payment.
+  - On click of proceed to payment button, take to dummy payment page 
   - dummy successful payment 
   - show order summary 
 
+  - In RestaurantMenu Page, show the add cart items and allow the user to remove/add items in that cart
+  - On click of Checkout button, navigate to Cart page.
 
 
-SignIn With Google - Authentication using Firebase 
+
+<ans>Authentication</ans>
+
+### SignIn With Google - Authentication using Firebase 
 
 1. Install SignIn with Google button -  npm install react-google-button 
 2. Create Firebase project for our app - Instafood 
-3. Click </> button - register app
+3. Click </ans> button - register app
 4. Install firebase : npm install firebase
 5. Initialize firebase by copying the given config into firebase.js
 6. Open Authentication card in Firbase -> Sign-in method -> Choose Google as provider -> give your gmail id and enable 
@@ -71,8 +66,21 @@ export const auth = getAuth(app);
 11. Provider the UserAuthProvider in App.js 
 
 
-SignIn/SignUp using email and password - Firebase 
+### SignIn/SignUp using email and password - Firebase 
 
 1. In Firebase console, Authentication -> SignIn method -> Add new provider -> Enable Email.passord
 
-2. 
+2. Handle the email/password signin in SignIn.js 
+
+3. Handle email/paasword signup in SignUp.js
+
+4. Provide them in AuthContext Provider
+
+
+### Authentication feature : 
+
+1. On click of Login button in header, show signin page 
+2. User can sign in using email/password or Google 
+3. If the user does not have an account, user can signup using email/password
+4. After signup, take to home page
+5. After signin, take to home page.
