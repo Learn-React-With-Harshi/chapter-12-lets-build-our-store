@@ -1,61 +1,113 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import {  ITEM_IMG_CDN } from "../config";
-import { addItem, removeItem, clearCart } from '../utils/cartSlice';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart } from "../utils/cartSlice";
+import ItemQuantity from "./ItemQuantity";
+import CartFallback from "../components/CartFallback";
+import useItemTotal from "../utils/useItemTotal.js";
+import { AccountFallback } from "./AccountFallback";
+import { UserAuth } from "../utils/context/AuthContext";
+import { Link } from "react-router-dom";
+import { isEmptyObject } from "../utils/helper";
 
 const Cart = () => {
-  const dispatch = useDispatch();
+  const { user } = UserAuth();
   const cartItems = useSelector((store) => store.cart.items);
-
-
-  const handleAddItem = (item) =>{
-    dispatch(addItem(item)); // redux send action object to store {payload : item}
-  };
-
-  const handleRemoveItem = (id) => {
-    dispatch(removeItem(id));
-  };
+  const address = useSelector((store) => store.cart.deliveryAddress);
+  const payment = useSelector((store) => store.cart.paymentMethod);
+  const dispatch = useDispatch();
+  const getItemTotal = useItemTotal();
 
   const handleClearCart = () => {
     dispatch(clearCart());
-  }
+  };
 
-  return (
-    <div className='container flex flex-col'>
-      <div className='flex justify-between m-5'>
-      <h1 className='text-xl mt-2.5 text-title font-bold '>Cart Items</h1>
-      <button className='w-[80px] rounded-md bg-red text-white' onClick={()=>handleClearCart()}>Clear Cart</button>
-
+  return Object.values(cartItems).length > 0 ? (
+    <div className="flex mt-5 mx-6  p-20  justify-between">
+      <div className="w-[60%]">
+        <AccountFallback />
       </div>
-      <div className='flex'>
-        <div className="flex flex-col justify-evenly w-[70%] m-5">
-              { Object.values(cartItems).map( item => 
-              <div className="flex justify-between basis-[848px] max-h-[250px] p-5 border-b border-gray" key={item.id}>
-              <div className="flex flex-col basis-[400px]">
-                <h3 className="font-bold text-lg w-3/5">{item.name}</h3>
-                <p className="mt-1 text-base font-normal">{(item.price > 0) ?
-                  new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR'}).format(item.price/100 ): " " } </p>
-                <p className="mt-3.5 leading-5 text-gray-desc w-4/5 text-base overflow-hidden ">{item.description}</p>
-              </div>
-              <div className="flex flex-col justify-center items-center w-[118px] h-[150px]">
-                { item.cloudinaryImageId  && <img className="w-[118px] h-[96px]" src={ ITEM_IMG_CDN  + item.cloudinaryImageId } alt={item?.name}/> }
-                <div className=" flex justify-evenly items-center w-[100px] h-[34px] mt-2.5 text-gray-count outline-none border bg-white border-gray ">
-                  <button className="text-xl text-gray-count font-semibold" onClick={() => handleRemoveItem(item.id)}> - </button>
-                  <span className="text-base text-green"> {item.quantity} </span>
-                  <button className="text-green text-xl" onClick={() => handleAddItem(item)}> + </button>
+
+      <div className="bg-white drop-shadow-md flex-2 p-6 w-auto">
+        <div className="flex justify-between items-center mb-2">
+          <h1 className="text-lg mt-2.5 text-title font-bold ">Cart Items</h1>
+          <button
+            className="w-[80px] h-[22px] rounded-md bg-red text-white text-sm"
+            onClick={() => handleClearCart()}
+          >
+            Clear Cart
+          </button>
+        </div>
+        {Object.values(cartItems).map((item) => {
+          return (
+            <div className="my-3">
+              <div className="flex items-center mt-2">
+                <p className="px-2 w-48 text-sm">{item.name}</p>
+                <div className="px-5">
+                  <ItemQuantity item={item} key={item.id} />
                 </div>
+
+                <p className="font-thin text-sm">
+                  {"₹ " + (item.price / 100) * item.quantity}
+                </p>
               </div>
             </div>
-              )}
+          );
+        })}
+
+        <div className="border border-black my-2"></div>
+        <div className="flex justify-between">
+          <p className="font-bold text-sm">To Pay</p>
+          <p className="font-bold  text-sm">{"₹ " + getItemTotal()}</p>
         </div>
-        <div className="flex flex-col justify-evenly w-[30%] m-5 border border-gray"  >
-          Payment
-        </div>
+        {user && (!isEmptyObject(address) || !isEmptyObject(payment)) && (
+          <>
+            <div className="border border-black my-2"></div>
+            {!isEmptyObject(address) && (
+              <div className="flex flex-col justify-between my-2">
+                <h1 className="text-lg mt-2.5 text-title font-bold ">
+                  Delivery Address
+                </h1>
+                <h2 className="font-semibold mt-2.5 text-title text-base">
+                  {address.addressType}
+                </h2>
+                <p className="text-sm text-bio text-ellipsis">
+                  {address.addressDescription}
+                </p>
+              </div>
+            )}
+            {!isEmptyObject(payment) && (
+              <div className="flex flex-col justify-between mb-2">
+                <h1 className="text-lg mt-2.5 text-title font-bold ">
+                  Payment
+                </h1>
+                <h2 className="font-semibold mt-2.5 text-title text-base">
+                  {payment.paymentType}
+                </h2>
+                <p className="text-sm text-bio text-ellipsis">
+                  {payment?.paymentMethod}
+                </p>
+              </div>
+            )}
+            <div className="flex justify-center my-10">
+              <Link to="/payment">
+                <button className="bg-yellow px-4 py-2 text-blue-dark hover:drop-shadow-lg backdrop-blur">
+                  {" "}
+                  PROCEED TO PAYMENT
+                </button>
+              </Link>
+            </div>
+          </>
+        )}
       </div>
-      
-      </div>
-    
-  )
-}
+    </div>
+  ) : (
+    <div className="container mx-auto">
+      <CartFallback
+        text={"Your cart is empty ! "}
+        btnText={"SEE RESTAURANTS NEAR YOU"}
+      />
+    </div>
+  );
+};
 
 export default Cart;

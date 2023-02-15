@@ -1,10 +1,13 @@
 //Config Driven UI - Mock Data from API
 
-/* CDN for Restaurant & Menu items Images  */
+/* CDN for Restaurant, Menu items and Fallback Images  */
 export const RES_IMG_CDN =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 export const ITEM_IMG_CDN =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+
+export const CART_FALLBACK_IMG = 
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0";
 
 /* PONDY LOCATION URL */
 //export const GET_RESTAURANTS_LIST = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=11.9343684&lng=79.8255499&page_type=DESKTOP_WEB_LISTING";
@@ -31,6 +34,36 @@ export const GITHUB_GET_USER = "https://api.github.com/users/";
 export const GITHUB_LINK = "https://github.com/HarshithaSolai";
 export const LINKEDIN_LINK = "https://www.linkedin.com/in/harshitha-sv/";
 export const GMAIL_LINK = "mailto:solaiharshitha0@gmail.com";
+
+/* User Address - Checkout  */
+export const USERS_ADDRESS_LIST = [
+	{
+		id: "01",
+		addressType: "Home",
+		addressDescription: "12, D block , Indira nagar",
+	},
+
+	{
+		id: "02",
+		addressType: "Work",
+		addressDescription: "RMZ, Koramangala",
+	},
+];
+
+/* Payment Method - Checkout  */
+export const PAYMENT_METHODS = [
+	{
+		id: "01",
+		paymentType: "Pay Online",
+		paymentMethod: ["UPI / Card Payment"],
+	},
+
+	{
+		id: "02",
+		paymentType: "Pay Offline",
+		paymentMethod: ["Cash On Delivery"],
+	},
+];
 
 /* Mock FAQ */
 export const FAQ = [
