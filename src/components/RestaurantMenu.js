@@ -54,7 +54,7 @@ const RestaurantMenu = () => {
       </div>
 
       <div className="flex justify-center sm:flex-col xsm:flex-col mob:flex-col">
-        <div className="mt-7 xl:w-[70px] lg:w-[70%] md:w-[70%] card-container">
+        <div className="mt-7 xl:w-[70%] lg:w-[70%] md:w-[70%] card-container">
           <div className="p-5">
             <h3 className="font-bold text-lg">Recommended</h3>
             <p className="mt-3.5 w-3/5 text-gray-desc text-sm">
