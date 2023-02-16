@@ -31,6 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "dotenv": "^16.0.3",
     "parcel": "^2.8.2",
     "postcss": "^8.4.21",
     "process": "^0.11.10",

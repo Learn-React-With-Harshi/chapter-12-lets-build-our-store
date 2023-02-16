@@ -88,3 +88,7 @@ Reference : https://www.youtube.com/watch?v=x62aBvnRCKw&list=PLaPfwr_iF3CarlXMRM
 3. If the user does not have an account, user can signup using email/password
 4. After signup, take to home page
 5. After signin, take to home page.
+
+### API Key - .Env file 
+
+npm install --save-dev dotenv
