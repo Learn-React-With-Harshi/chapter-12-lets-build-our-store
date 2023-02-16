@@ -22,8 +22,8 @@ const Cart = () => {
   };
 
   return Object.values(cartItems).length > 0 ? (
-    <div className="flex mt-5 mx-6  p-20  justify-between">
-      <div className="w-[60%]">
+    <div className="flex mt-5 mx-6 p-20 justify-between sm:p-0 xsm:p-0 mob:p-0 sm:flex-col xsm:flex-col mob:flex-col">
+      <div className="lg:w-[60%] md:w-[60%] xl:w-[60%]">
         <AccountFallback />
       </div>
 
