@@ -1,3 +1,2 @@
-/* Solve the issue of 404 Error Page while deploying on netlify: Add this file in dist folder when you want to deploy your app in netlify after typing command "npm run build"*/
 
 /*    /index.html   200
