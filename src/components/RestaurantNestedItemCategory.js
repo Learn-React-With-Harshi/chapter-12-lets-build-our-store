@@ -17,9 +17,9 @@ const RestaurantNestedItemCategory = ({ nestedCategory }) => {
           {nestedCategory.title}
         </h3>
         {isVisible ? (
-          <SlArrowUp onClick={toggleView} size={20} />
+          <SlArrowUp onClick={toggleView} />
         ) : (
-          <SlArrowDown onClick={toggleView} size={20} />
+          <SlArrowDown onClick={toggleView} />
         )}
       </div>
       {isVisible && (
