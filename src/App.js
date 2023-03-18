@@ -25,6 +25,8 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import PaymentPage from "./components/PaymentPage";
 import OrderSummary from "./components/OrderSummary";
 import Shimmer from "./components/Shimmer";
+import RestaurantDetails from "./components/RestaurantDetails";
+
 /* import Instamart from "./components/Instamart";  
 On Demand loading
 */
@@ -106,7 +108,7 @@ const appRouter = createBrowserRouter([
           },
           {
             path: "/restaurant/:resId",
-            element: <RestaurantMenu />,
+            element: <RestaurantDetails />,
           },
           {
             path: "/instamart",

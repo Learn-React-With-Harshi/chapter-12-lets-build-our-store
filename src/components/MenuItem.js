@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
 const MenuItem = ({ item }) => {
-  const { id, name, description, price, cloudinaryImageId } = item;
+  console.log(item)
+  const { id, name, description, price, imageId } = item;
 
   const dispatch = useDispatch();
   const [itemCount, setItemCount] = useState(0);
@@ -23,7 +24,7 @@ const MenuItem = ({ item }) => {
 
   return (
     <div
-      className="flex justify-between basis-[848px] max-h-[250px] p-5 border-b border-gray"
+      className="flex justify-between basis-[848px] max-h-[180px] p-5 border-b border-gray"
       key={id}
     >
       <div className="flex flex-col basis-[400px]">
@@ -36,10 +37,10 @@ const MenuItem = ({ item }) => {
         </p>
       </div>
       <div className="flex flex-col justify-center items-center w-[118px] h-[150px]">
-        {cloudinaryImageId && (
+        {imageId && (
           <img
             className="w-[118px] h-[96px]"
-            src={ITEM_IMG_CDN + cloudinaryImageId}
+            src={ITEM_IMG_CDN + imageId}
             alt={item?.name}
           />
         )}
