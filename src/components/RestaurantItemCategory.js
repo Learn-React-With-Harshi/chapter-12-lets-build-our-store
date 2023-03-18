@@ -12,13 +12,13 @@ const RestaurantItemCategory = ({ itemCategory }) => {
   return (
     <div className="p-5">
       <div className="flex items-center justify-between">
-        <h3 className="font-bold text-lg" onClick={toggleView}>
+        <h3 className="font-bold text-lg cursor-pointer" onClick={toggleView}>
           {itemCategory.title} ({itemCategory.itemCards.length})
         </h3>
         {isVisible ? (
-          <SlArrowUp onClick={toggleView} />
+          <SlArrowUp onClick={toggleView} className="cursor-pointer"/>
         ) : (
-          <SlArrowDown onClick={toggleView}  />
+          <SlArrowDown onClick={toggleView} className="cursor-pointer" />
         )}
       </div>
       {isVisible && (
