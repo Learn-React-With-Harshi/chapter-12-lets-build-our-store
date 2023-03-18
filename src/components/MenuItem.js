@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
 const MenuItem = ({ item }) => {
-  console.log(item)
+
   const { id, name, description, price, imageId } = item;
 
   const dispatch = useDispatch();
