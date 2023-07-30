@@ -3,7 +3,7 @@ import { AiFillStar } from "react-icons/ai";
 import { useState } from "react";
 
 export const RestaurantCard = ({ props, setRestaurants}) => {
-  const {name, cuisines, cloudinaryImageId, avgRating, slaString, costForTwoString} = props.data;
+  const {name, cuisines, cloudinaryImageId, avgRating, slaString, costForTwoString} = props;
   const buttonStyle = {
     backgroundColor: avgRating == "--" ? "#fff" : parseFloat(avgRating) < 4.0 ? "#db7c38":"#48c479",
     color : isNaN(avgRating)? "#535665" : "#fff"

@@ -27,11 +27,12 @@ const Body = () => {
       const response = await fetch(GET_RESTAURANTS_LIST);
       const res_data = await response.json();
       
+  
       /* Mock Data */ 
       //const res_data = restaurantList;
 
-      setAllRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
-      setFilteredRestaurants(res_data?.data?.cards[2]?.data?.data?.cards);
+      setAllRestaurants(res_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setFilteredRestaurants(res_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     } catch (error) {
       console.log(error);
     }
@@ -111,8 +112,8 @@ return (
     <div className="flex flex-wrap gap-5 justify-center">
       {filteredRestaurants.map((restaurant) => {
         return ( <Link
-          className="basis-[250px] p-2.5 mb-2.5 mob:basis-[150px]" to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
-          <RestaurantCard props={restaurant} key={restaurant.data.id} setRestaurants={addFavourite} />
+          className="basis-[250px] p-2.5 mb-2.5 mob:basis-[150px]" to={"/restaurant/" + restaurant.data.id} key={restaurant.info.id}>
+          <RestaurantCard props={restaurant} key={restaurant.info.id} setRestaurants={addFavourite} />
         </Link>
         )
       })}
