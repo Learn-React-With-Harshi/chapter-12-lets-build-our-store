@@ -112,7 +112,7 @@ return (
     <div className="flex flex-wrap gap-5 justify-center">
       {filteredRestaurants.map((restaurant) => {
         return ( <Link
-          className="basis-[250px] p-2.5 mb-2.5 mob:basis-[150px]" to={"/restaurant/" + restaurant.data.id} key={restaurant.info.id}>
+          className="basis-[250px] p-2.5 mb-2.5 mob:basis-[150px]" to={"/restaurant/" + restaurant.info.id} key={restaurant.info.id}>
           <RestaurantCard props={restaurant} key={restaurant.info.id} setRestaurants={addFavourite} />
         </Link>
         )
