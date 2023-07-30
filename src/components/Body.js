@@ -31,8 +31,8 @@ const Body = () => {
       /* Mock Data */ 
       //const res_data = restaurantList;
 
-      setAllRestaurants(res_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setFilteredRestaurants(res_data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setAllRestaurants(res_data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setFilteredRestaurants(res_data?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     } catch (error) {
       console.log(error);
     }
